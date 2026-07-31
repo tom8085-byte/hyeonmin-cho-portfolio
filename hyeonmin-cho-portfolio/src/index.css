@@ -200,3 +200,65 @@
   background-image: radial-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px);
   background-size: 20px 20px;
 }
+
+/* Research evidence: framed like a restrained engineering lab record. */
+.research-figure {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  background:
+    linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%);
+  box-shadow: 0 18px 50px hsl(222 47% 2% / 0.32);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.research-figure:hover {
+  border-color: hsl(var(--primary) / 0.42);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 60px hsl(188 100% 20% / 0.12);
+}
+
+.research-figure__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid hsl(var(--border));
+  color: hsl(var(--primary));
+  font-family: var(--app-font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+}
+
+.research-figure__image-wrap {
+  display: block;
+  margin: 0.75rem;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  background: #ffffff;
+}
+
+.research-figure__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #ffffff;
+  transition: transform 220ms ease;
+}
+
+.research-figure:hover .research-figure__image {
+  transform: scale(1.012);
+}
+
+.research-figure__caption {
+  padding: 0.35rem 1rem 1rem;
+  border-top: 1px solid hsl(var(--border) / 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-figure,
+  .research-figure__image {
+    transform: none !important;
+  }
+}

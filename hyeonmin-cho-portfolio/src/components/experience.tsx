@@ -24,13 +24,8 @@ export function Experience() {
                 <p className="text-sm text-primary font-mono mt-0.5">{exp.organization}</p>
               )}
               <p className="font-mono text-xs text-muted-foreground mt-1">
-                {[exp.period, exp.location].filter(Boolean).join(' · ')}
+                {[exp.location, exp.period].filter(Boolean).join(' · ')}
               </p>
-              {exp.shortDescription && (
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  {exp.shortDescription}
-                </p>
-              )}
               {exp.route && (
                 <Link
                   href={exp.route}

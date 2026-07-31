@@ -1,4 +1,5 @@
-import { Wrench } from 'lucide-react';
+import { Link } from 'wouter';
+import { ArrowRight, Wrench } from 'lucide-react';
 import { training } from '@/data/roboticsPortfolioData';
 import { SectionHeading } from './section-heading';
 
@@ -18,9 +19,17 @@ export function Training() {
               <div>
                 <h3 className="text-base font-bold text-foreground leading-snug">{t.title}</h3>
                 {t.organization && <p className="mt-1 text-sm text-muted-foreground">{t.organization}</p>}
-                {t.period && <p className="mt-1 font-mono text-xs text-muted-foreground">{t.period}</p>}
-                {t.shortDescription && (
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t.shortDescription}</p>
+                <p className="mt-1 font-mono text-xs text-muted-foreground">
+                  {[t.location, t.period].filter(Boolean).join(' · ')}
+                </p>
+                {t.route && (
+                  <Link
+                    href={t.route}
+                    className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary rounded-sm"
+                  >
+                    Learn More
+                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </Link>
                 )}
               </div>
             </div>
