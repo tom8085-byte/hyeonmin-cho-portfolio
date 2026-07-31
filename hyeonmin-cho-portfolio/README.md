@@ -33,6 +33,13 @@ Evidence buttons render only when an evidence item has a real `href`. Keep evide
 - `/projects/smart-manhole-monitoring`
 - `/projects/inbody-meal-recommendation`
 - `/projects/deep-learning-code-development`
+- `/experience/mathematics-instructor`
+- `/experience/army-radar-communications`
+- `/experience/beyond-busan-supporter`
+- `/experience/busan-un-week-supporter`
+- `/experience/makers-club-officer`
+- `/experience/power-semiconductor-bootcamp`
+- `/experience/rov-training`
 
 The Cloudflare Pages redirect rule in `public/_redirects` preserves direct access to client-side routes.
 

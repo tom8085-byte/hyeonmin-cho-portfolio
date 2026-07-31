@@ -15,6 +15,21 @@ export interface EvidenceItem {
   altText: string;
 }
 
+export interface ExternalResource {
+  label: string;
+  href: string;
+  description: string;
+}
+
+export interface ResearchFigure {
+  title: string;
+  src: string;
+  alt: string;
+  caption: string;
+  placement: 'sample-preparation' | 'analysis' | 'supporting';
+  layout?: 'wide' | 'standard';
+}
+
 export interface ContentRecord {
   id: string;
   title: string;
@@ -168,6 +183,7 @@ export const featuredResearch: ContentRecord = {
   organization: 'Ultrafast Terahertz Optoelectronics Laboratory · Korea Maritime & Ocean University',
   role: 'Undergraduate Researcher',
   period: 'January 2025 – January 2026',
+  location: 'Busan, Republic of Korea',
   problem:
     'Examine and compare terahertz spectral responses of nucleoside samples under controlled laboratory measurement conditions.',
   shortDescription:
@@ -203,11 +219,110 @@ export const featuredResearch: ContentRecord = {
   lessonsLearned: [
     'Reliable sensing depends on repeatable procedures, disciplined data acquisition, and careful interpretation of measured signals.',
   ],
-  evidenceStatus: 'pending',
-  evidenceItems: [],
+  evidenceStatus: 'available',
+  evidenceItems: [
+    {
+      title: 'Cytidine TPPWG Room-Temperature Experiment Summary',
+      type: 'Experimental Slide',
+      date: '2025',
+      description:
+        'Owner-supplied slide documenting the room-temperature TPPWG comparison, measurement configuration, and reported observations for cytidine and 2′-deoxycytidine.',
+      href: '/research/cytidine-tppwg-room-temperature-results.png',
+      buttonLabel: 'View Experiment Summary',
+      altText:
+        'Experimental slide with absorbance spectra, a terahertz waveguide schematic, and notes comparing cytidine and 2-prime-deoxycytidine at room temperature.',
+    },
+    {
+      title: '2′-Deoxycytidine TPPWG Sample-Coating Record',
+      type: 'Experimental Slide',
+      date: 'November 3–5, 2025',
+      description:
+        'Owner-supplied slide documenting the coating and drying procedure and a visual comparison of laser-used and no-laser sample conditions.',
+      href: '/research/deoxycytidine-tppwg-room-temperature-test.png',
+      buttonLabel: 'View Sample-Coating Record',
+      altText:
+        'Experimental slide showing two photographs of a 2-prime-deoxycytidine-coated TPPWG, a terahertz waveguide schematic, coating steps, and measurement observations.',
+    },
+    {
+      title: 'Representative THz Spectrum — Measurement Run 710',
+      type: 'Experimental Figure',
+      description:
+        'Owner-supplied frequency-domain amplitude spectrum from the reported cytidine and 2′-deoxycytidine measurement series.',
+      href: '/research/thz-spectrum-run-710.png',
+      buttonLabel: 'View Experimental Figure',
+      altText:
+        'THz amplitude-versus-frequency spectrum for measurement run 710, plotted from 0 to 4 THz.',
+    },
+    {
+      title: 'Representative THz Spectrum — Measurement Run 707',
+      type: 'Experimental Figure',
+      description:
+        'Owner-supplied frequency-domain amplitude spectrum from the reported cytidine and 2′-deoxycytidine measurement series.',
+      href: '/research/thz-spectrum-run-707.png',
+      buttonLabel: 'View Experimental Figure',
+      altText:
+        'THz amplitude-versus-frequency spectrum for measurement run 707, plotted from 0 to 4 THz.',
+    },
+  ],
   route: '/research/terahertz-spectroscopy',
   featured: true,
   visible: true,
+};
+
+export const thzResearchContext: {
+  supervisor: string;
+  supervisionNote: string;
+  resources: ExternalResource[];
+  figures: ResearchFigure[];
+} = {
+  supervisor: 'Prof. Tae-In Jeon',
+  supervisionNote:
+    'I conducted this undergraduate research under the supervision of Prof. Tae-In Jeon in the Ultrafast Terahertz Optoelectronics Laboratory at Korea Maritime & Ocean University.',
+  resources: [
+    {
+      label: 'Visit the THz Laboratory',
+      href: 'https://sites.google.com/g.kmou.ac.kr/thzlab/home',
+      description: 'Official laboratory website for the Ultrafast Terahertz Optoelectronics Laboratory.',
+    },
+  ],
+  figures: [
+    {
+      title: 'Cytidine and 2′-Deoxycytidine Room-Temperature Experiment Summary',
+      src: '/research/cytidine-tppwg-room-temperature-results.png',
+      alt: 'Experimental slide with absorbance spectra, a terahertz waveguide schematic, and notes comparing cytidine and 2-prime-deoxycytidine at room temperature.',
+      caption:
+        'Owner-supplied experiment summary. The slide records the TPPWG measurement configuration and the reported room-temperature comparison that informed the sample-selection workflow.',
+      placement: 'analysis',
+      layout: 'wide',
+    },
+    {
+      title: '2′-Deoxycytidine Sample Coating and Laser-Condition Check',
+      src: '/research/deoxycytidine-tppwg-room-temperature-test.png',
+      alt: 'Experimental slide showing two photographs of a 2-prime-deoxycytidine-coated TPPWG, a terahertz waveguide schematic, coating steps, and measurement observations.',
+      caption:
+        'Owner-supplied record dated November 3–5, 2025. It documents the coating and high-humidity drying procedure and compares visible sample conditions with and without laser use.',
+      placement: 'sample-preparation',
+      layout: 'wide',
+    },
+    {
+      title: 'Representative Frequency-Domain Spectrum A',
+      src: '/research/thz-spectrum-run-710.png',
+      alt: 'THz amplitude-versus-frequency spectrum for measurement run 710, plotted from 0 to 4 THz.',
+      caption:
+        'Measurement run 710. The supplied plot shows the measured amplitude spectrum across the 0–4 THz frequency range.',
+      placement: 'supporting',
+      layout: 'standard',
+    },
+    {
+      title: 'Representative Frequency-Domain Spectrum B',
+      src: '/research/thz-spectrum-run-707.png',
+      alt: 'THz amplitude-versus-frequency spectrum for measurement run 707, plotted from 0 to 4 THz.',
+      caption:
+        'Measurement run 707. The supplied plot shows the measured amplitude spectrum across the 0–4 THz frequency range.',
+      placement: 'supporting',
+      layout: 'standard',
+    },
+  ],
 };
 
 export const thzCaseStudy: { record: ContentRecord; sections: CaseStudySection[] } = {
@@ -216,7 +331,7 @@ export const thzCaseStudy: { record: ContentRecord; sections: CaseStudySection[]
     {
       heading: 'Research Context',
       paragraphs: [
-        'This undergraduate research was conducted in the Ultrafast Terahertz Optoelectronics Laboratory at Korea Maritime & Ocean University within the laboratory’s established experimental program.',
+        'This undergraduate research was conducted in the Ultrafast Terahertz Optoelectronics Laboratory at Korea Maritime & Ocean University within the laboratory’s established experimental program and under the supervision of Prof. Tae-In Jeon.',
       ],
     },
     {
@@ -228,7 +343,7 @@ export const thzCaseStudy: { record: ContentRecord; sections: CaseStudySection[]
     {
       heading: 'Sample and Waveguide Information',
       paragraphs: [
-        'The nucleoside samples were applied to tapered parallel-plate waveguides. Consistent preparation and positioning were important because the measured response could be affected by the sample layer and experimental alignment.',
+        'The nucleoside samples were applied to 30 mm tapered parallel-plate waveguides. Consistent coating, drying, and positioning were important because the measured response could be affected by the sample layer and experimental alignment.',
       ],
     },
     {
@@ -240,7 +355,7 @@ export const thzCaseStudy: { record: ContentRecord; sections: CaseStudySection[]
     {
       heading: 'Frequency-Domain Analysis',
       paragraphs: [
-        'I examined frequency-domain spectra and compared measurement conditions and absorption characteristics while paying attention to signal quality and repeatability.',
+        'I examined frequency-domain spectra and compared measurement conditions and absorption characteristics while paying attention to signal quality and repeatability. The experiment-summary slide records the reported room-temperature comparison, while the two raw spectrum captures are representative amplitude spectra whose sample-to-run mapping remains intentionally unlabeled until confirmed.',
       ],
     },
     {
@@ -668,6 +783,7 @@ export const experiences: ContentRecord[] = [
     role: 'Instructor',
     period: 'March 2026 – Present',
     location: 'Busan, Republic of Korea',
+    route: '/experience/mathematics-instructor',
     shortDescription:
       'Teach mathematics to children and provide individualized academic support through structured problem-solving activities. Adapt explanations and learning activities to students’ different learning levels and needs.',
     evidenceStatus: 'pending',
@@ -681,6 +797,8 @@ export const experiences: ContentRecord[] = [
     organization: 'Republic of Korea Army',
     role: 'Squad Leader, January 2023 – July 2023',
     period: 'January 2022 – July 2023',
+    location: 'Pyeongtaek, Gyeonggi-do, Republic of Korea (Pyeongtaek Naval Base)',
+    route: '/experience/army-radar-communications',
     shortDescription:
       'Operated PRC-999K radios, GPS, radar, harbor communication equipment, and ROVs; conducted communication checks; inspected the vessel’s electrical distribution panel; and performed basic troubleshooting and minor repairs.',
     evidenceStatus: 'pending',
@@ -693,6 +811,8 @@ export const experiences: ContentRecord[] = [
     title: 'Beyond Busan Supporter, SNS Division',
     organization: 'Bdan',
     period: 'March 2026 – Present',
+    location: 'Busan, Republic of Korea',
+    route: '/experience/beyond-busan-supporter',
     shortDescription: 'Produce and edit social media videos and update website content.',
     evidenceStatus: 'pending',
     evidenceItems: [],
@@ -704,6 +824,8 @@ export const experiences: ContentRecord[] = [
     title: 'UNs Supporter, 2025 Busan UN Week',
     organization: 'Busan Global City Foundation',
     period: 'April 2025 – November 2025',
+    location: 'Busan, Republic of Korea',
+    route: '/experience/busan-un-week-supporter',
     shortDescription:
       'Collaborated with international participants on festival projects and volunteer activities, produced magazine content, and edited program videos.',
     evidenceStatus: 'pending',
@@ -716,6 +838,8 @@ export const experiences: ContentRecord[] = [
     title: 'Makers Club Officer',
     organization: 'Korea Maritime & Ocean University',
     period: 'March 2024 – December 2024',
+    location: 'Busan, Republic of Korea',
+    route: '/experience/makers-club-officer',
     shortDescription:
       'Prepared materials, assisted with hands-on sessions, and worked in teams to build an autonomous mobile robot and a robotic arm.',
     evidenceStatus: 'pending',
@@ -731,6 +855,8 @@ export const training: ContentRecord[] = [
     title: 'Semiconductor Bootcamp',
     organization: 'Korea Maritime & Ocean University',
     period: 'March 2026 – Present',
+    location: 'Busan, Republic of Korea',
+    route: '/experience/power-semiconductor-bootcamp',
     shortDescription:
       'Lecture-based and hands-on training covering semiconductor devices, Si/SiC/GaN power semiconductors, simulation workflows, wafer processing, characterization, packaging, plasma treatment, heavy wire bonding, and bond testing.',
     evidenceStatus: 'pending',
@@ -743,6 +869,8 @@ export const training: ContentRecord[] = [
     title: 'Marine ROV Professional Operator Level 3 Training',
     organization: 'Underwater Solution Co., Ltd.',
     period: 'November 2025',
+    location: 'Republic of Korea',
+    route: '/experience/rov-training',
     shortDescription: 'Completed hands-on training in ROV operation and inspection.',
     evidenceStatus: 'pending',
     evidenceItems: [],
@@ -866,7 +994,8 @@ export const navLinks = [
 export const ownerVerificationItems = [
   'Upload the reviewed Hyeonmin_Cho_CV.pdf before enabling Download CV.',
   'Confirm the specific individual contribution to the InBody project.',
-  'Upload public-safe evidence files for THz research and each project before enabling evidence buttons.',
+  'Confirm which sample and condition correspond to THz measurement runs 710 and 707 before adding sample-specific figure labels.',
+  'Upload public-safe evidence files for each project before enabling project evidence buttons.',
   'Confirm official English translations for Korean award titles.',
   'Provide official documentation before displaying the fourth-place major ranking.',
   'Provide real GitHub or LinkedIn URLs before showing social profile buttons.',
