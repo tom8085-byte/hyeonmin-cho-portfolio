@@ -52,6 +52,7 @@ export interface ContentRecord {
   evidenceItems: EvidenceItem[];
   image?: string;
   imageAlt?: string;
+  imageCaption?: string;
   externalLink?: string;
   route?: string;
   featured: boolean;
@@ -801,6 +802,11 @@ export const experiences: ContentRecord[] = [
     route: '/experience/army-radar-communications',
     shortDescription:
       'Operated PRC-999K radios, GPS, radar, harbor communication equipment, and ROVs; conducted communication checks; inspected the vessel’s electrical distribution panel; and performed basic troubleshooting and minor repairs.',
+    image: '/experience/patrol-boat-squad-photo.svg',
+    imageAlt:
+      'Hyeonmin Cho with fellow soldiers aboard a patrol boat at Pyeongtaek Naval Base; the other faces are obscured for privacy.',
+    imageCaption:
+      'Service record aboard a patrol boat at Pyeongtaek Naval Base. Other individuals are obscured for privacy.',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,

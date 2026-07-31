@@ -256,6 +256,62 @@
   border-top: 1px solid hsl(var(--border) / 0.72);
 }
 
+/* Experience evidence: a restrained field-record treatment for real photographs. */
+.experience-record {
+  width: min(100%, 56rem);
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%);
+  box-shadow: 0 18px 50px hsl(222 47% 2% / 0.3);
+}
+
+.experience-record__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid hsl(var(--border));
+  color: hsl(var(--primary));
+  font-family: var(--app-font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+}
+
+.experience-record__image-wrap {
+  margin: 0.8rem;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+}
+
+.experience-record__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.experience-record__caption {
+  padding: 0.2rem 1rem 1rem;
+  color: hsl(var(--muted-foreground));
+  font-family: var(--app-font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .experience-record {
+    margin-left: 0;
+  }
+
+  .experience-record__label {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .research-figure,
   .research-figure__image {

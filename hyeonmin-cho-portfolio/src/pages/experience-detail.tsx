@@ -38,6 +38,31 @@ export default function ExperienceDetail({ experienceId }: { experienceId: strin
         <p className="pl-4 text-muted-foreground leading-relaxed">
           {experience.detailedDescription ?? experience.shortDescription}
         </p>
+
+        {experience.image && (
+          <figure className="experience-record mt-8 ml-4">
+            <div className="experience-record__label">
+              <span>FIELD RECORD</span>
+              <span>{experience.period}</span>
+            </div>
+            <div className="experience-record__image-wrap">
+              <img
+                src={experience.image}
+                alt={experience.imageAlt ?? ''}
+                width="1523"
+                height="1033"
+                loading="lazy"
+                decoding="async"
+                className="experience-record__image"
+              />
+            </div>
+            {experience.imageCaption && (
+              <figcaption className="experience-record__caption">
+                {experience.imageCaption}
+              </figcaption>
+            )}
+          </figure>
+        )}
       </section>
     </CaseStudyLayout>
   );
