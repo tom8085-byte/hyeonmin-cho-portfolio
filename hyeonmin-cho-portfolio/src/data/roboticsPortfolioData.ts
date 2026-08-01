@@ -26,7 +26,13 @@ export interface ResearchFigure {
   src: string;
   alt: string;
   caption: string;
-  placement: 'sample-preparation' | 'analysis' | 'supporting';
+  placement:
+    | 'sample-preparation'
+    | 'analysis'
+    | 'supporting'
+    | 'reference-context'
+    | 'measurement-reliability';
+  recordLabel?: string;
   layout?: 'wide' | 'standard';
 }
 
@@ -192,11 +198,13 @@ export const featuredResearch: ContentRecord = {
   detailedDescription:
     'The work was completed within an established laboratory research workflow under faculty and laboratory guidance. It did not result in a publication claim or an independently owned scientific discovery.',
   individualContribution:
-    'Participated in THz measurement sessions, sample and waveguide preparation, LabVIEW-based data acquisition, frequency-domain spectrum examination, and comparison of measurement conditions.',
+    'Participated in THz measurement sessions, sample and waveguide preparation, LabVIEW-based data acquisition, frequency-domain spectrum examination, comparison of measurement conditions, and review of environmental-noise sources affecting repeatability.',
   methods: [
     'THz time-domain spectroscopy',
     'Tapered parallel-plate waveguides',
     'Frequency-domain comparison',
+    'MSE-based noise comparison',
+    'Environmental interference review',
     'Structured experimental data handling',
   ],
   technologies: [
@@ -207,6 +215,7 @@ export const featuredResearch: ContentRecord = {
     'Frequency-Domain Spectra',
     'LabVIEW-Based Measurement',
     'Electromagnetic Measurement',
+    'Measurement Reliability',
     'Optoelectronics',
     'Experimental Research',
   ],
@@ -215,10 +224,11 @@ export const featuredResearch: ContentRecord = {
   ],
   limitations: [
     'Measurements were sensitive to sample preparation, alignment, and environmental conditions.',
+    'The environmental-condition comparisons were diagnostic: thermal timing, equipment state, and the selected fitting range were not fully matched across every scan.',
     'The work followed the laboratory’s established framework and did not produce publication authorship.',
   ],
   lessonsLearned: [
-    'Reliable sensing depends on repeatable procedures, disciplined data acquisition, and careful interpretation of measured signals.',
+    'Reliable sensing depends on repeatable procedures, controlled environmental conditions, disciplined data acquisition, and careful interpretation of measured signals.',
   ],
   evidenceStatus: 'available',
   evidenceItems: [
@@ -264,6 +274,28 @@ export const featuredResearch: ContentRecord = {
       altText:
         'THz amplitude-versus-frequency spectrum for measurement run 707, plotted from 0 to 4 THz.',
     },
+    {
+      title: 'Laser-Power Stability Check under Air-Conditioner Operation',
+      type: 'Experimental Figure',
+      date: 'November 6, 2025',
+      description:
+        'Owner-supplied laser-power-meter record used during the laboratory investigation of environmental noise and air-conditioner operation.',
+      href: '/research/thz-ac-laser-power.svg',
+      buttonLabel: 'View Stability Check',
+      altText:
+        'Laser power meter traces comparing variation during different air-conditioner operating states.',
+    },
+    {
+      title: 'Environmental-Condition Noise Comparison',
+      type: 'Experimental Figure Set',
+      date: 'November 11, 2025',
+      description:
+        'Owner-supplied time-domain trace comparison covering air-conditioner and lighting states, accompanied by an MSE-based diagnostic review.',
+      href: '/research/thz-environmental-noise-comparison.svg',
+      buttonLabel: 'View Noise Comparison',
+      altText:
+        'Four time-domain current trace groups used to compare environmental operating conditions in a terahertz measurement setup.',
+    },
   ],
   route: '/research/terahertz-spectroscopy',
   featured: true,
@@ -287,6 +319,16 @@ export const thzResearchContext: {
     },
   ],
   figures: [
+    {
+      title: 'Water-Vapor Effects in THz Time and Frequency Domains',
+      src: '/research/thz-water-vapor-response.svg',
+      alt: 'Comparison of terahertz time-domain current and frequency-domain amplitude with and without water vapor.',
+      caption:
+        'Supplied reference figure illustrating how water vapor can introduce ringing in the time domain and absorption features in the frequency domain. It is included as technical context and is not presented as a result from the nucleoside measurements.',
+      placement: 'reference-context',
+      recordLabel: 'REFERENCE FIGURE',
+      layout: 'wide',
+    },
     {
       title: 'Cytidine and 2′-Deoxycytidine Room-Temperature Experiment Summary',
       src: '/research/cytidine-tppwg-room-temperature-results.png',
@@ -323,6 +365,36 @@ export const thzResearchContext: {
       placement: 'supporting',
       layout: 'standard',
     },
+    {
+      title: 'Laser-Power Stability under Air-Conditioner Operation',
+      src: '/research/thz-ac-laser-power.svg',
+      alt: 'Laser power meter traces comparing variation during different air-conditioner operating states.',
+      caption:
+        'Owner-supplied laboratory record dated November 6, 2025. The chart was used to inspect laser-power variation associated with the air-conditioner state; it is treated as a diagnostic observation rather than proof of a single causal mechanism.',
+      placement: 'measurement-reliability',
+      recordLabel: 'LAB RECORD',
+      layout: 'standard',
+    },
+    {
+      title: 'Repeated Time-Domain Response Traces',
+      src: '/research/thz-repeated-time-domain-traces.svg',
+      alt: 'Overlaid current-versus-time traces from repeated terahertz measurement scans.',
+      caption:
+        'Repeated current-versus-time traces from the environmental-condition review. The overlay was used to inspect scan-to-scan baseline variation and transient behavior.',
+      placement: 'measurement-reliability',
+      recordLabel: 'LAB RECORD',
+      layout: 'standard',
+    },
+    {
+      title: 'Environmental-Condition Trace Comparison',
+      src: '/research/thz-environmental-noise-comparison.svg',
+      alt: 'Four time-domain current trace groups comparing air-conditioner and lighting operating conditions.',
+      caption:
+        'Four trace groups from the November 11, 2025 laboratory record compare air-conditioner and lighting states with a prior reference measurement. MSE supplemented visual comparison, while thermal timing and end-of-scan fitting were documented as limitations.',
+      placement: 'measurement-reliability',
+      recordLabel: 'CONDITION COMPARISON',
+      layout: 'wide',
+    },
   ],
 };
 
@@ -357,6 +429,25 @@ export const thzCaseStudy: { record: ContentRecord; sections: CaseStudySection[]
       heading: 'Frequency-Domain Analysis',
       paragraphs: [
         'I examined frequency-domain spectra and compared measurement conditions and absorption characteristics while paying attention to signal quality and repeatability. The experiment-summary slide records the reported room-temperature comparison, while the two raw spectrum captures are representative amplitude spectra whose sample-to-run mapping remains intentionally unlabeled until confirmed.',
+      ],
+    },
+    {
+      heading: 'Measurement Reliability and Noise Investigation',
+      paragraphs: [
+        'Owner-supplied laboratory records dated November 6 and 11, 2025 document a focused investigation of environmental noise in the THz measurement setup. Laser-power-meter traces, repeated time-domain current scans, and air-conditioner and lighting operating states were compared to understand changes in baseline stability and repeatability.',
+        'Mean squared error (MSE) after line fitting was used as a supplementary comparison metric because visual inspection alone was insufficient. The records also identify confounding factors—including outdoor-unit thermal state, the interval after switching the air conditioner off, and incomplete fitting near the end of a scan—so the observations are presented as a diagnostic study rather than a definitive causal result.',
+      ],
+    },
+    {
+      heading: 'Environmental Interference Mechanisms Considered',
+      paragraphs: [
+        'Potential mechanisms considered in the laboratory review included airflow-induced refractive-index and optical-path variation, cable microphonics, power-line or electromagnetic interference from high-power equipment, and thermal drift affecting the laser, detector, electronics, sample, or measured baseline.',
+      ],
+    },
+    {
+      heading: 'Mitigation and Process Improvements',
+      paragraphs: [
+        'Proposed controls included redirecting or shielding airflow, using an enclosure to reduce drafts, securing cables with strain relief, considering low-noise cables, adding ferrite cores and filtered power where appropriate, reducing suspended or crossing cable sections, and comparing repeated scans only after the system reached a stable thermal state under matched operating conditions.',
       ],
     },
     {
