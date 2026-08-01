@@ -28,14 +28,17 @@ function ResearchSection({ section }: { section: CaseStudySection }) {
 }
 
 function FigureCards({ figures }: { figures: ResearchFigure[] }) {
-  const useTwoColumns = figures.length > 1 && figures.every((figure) => figure.layout !== 'wide');
+  const useTwoColumns = figures.length > 1;
 
   return (
     <div className={`mt-6 grid grid-cols-1 gap-5 pl-0 sm:pl-4 ${useTwoColumns ? 'md:grid-cols-2' : ''}`}>
       {figures.map((figure, index) => (
-        <figure key={figure.src} className="research-figure group">
+        <figure
+          key={figure.src}
+          className={`research-figure group ${useTwoColumns && figure.layout === 'wide' ? 'md:col-span-2' : ''}`}
+        >
           <div className="research-figure__label" aria-hidden="true">
-            <span>EXPERIMENTAL RECORD</span>
+            <span>{figure.recordLabel ?? 'EXPERIMENTAL RECORD'}</span>
             <span>{String(index + 1).padStart(2, '0')}</span>
           </div>
           <a
@@ -48,6 +51,7 @@ function FigureCards({ figures }: { figures: ResearchFigure[] }) {
               src={figure.src}
               alt={figure.alt}
               loading="lazy"
+              decoding="async"
               className="research-figure__image"
             />
           </a>
@@ -73,6 +77,12 @@ export default function ResearchThz() {
   );
   const supportingFigures = thzResearchContext.figures.filter(
     (figure) => figure.placement === 'supporting',
+  );
+  const referenceFigures = thzResearchContext.figures.filter(
+    (figure) => figure.placement === 'reference-context',
+  );
+  const reliabilityFigures = thzResearchContext.figures.filter(
+    (figure) => figure.placement === 'measurement-reliability',
   );
 
   useEffect(() => {
@@ -157,6 +167,21 @@ export default function ResearchThz() {
           ]}
         />
 
+        <section aria-labelledby="reference-signal-context">
+          <h2
+            id="reference-signal-context"
+            className="text-xl font-bold text-foreground mb-3 border-l-2 border-primary pl-4"
+          >
+            Reference Signal Context
+          </h2>
+          <p className="pl-4 text-sm text-muted-foreground leading-relaxed">
+            The supplied comparison below provides context for interpreting THz signals in ambient
+            conditions. It is clearly separated from the project’s own nucleoside measurement
+            records.
+          </p>
+          <FigureCards figures={referenceFigures} />
+        </section>
+
         {sectionByHeading('Frequency-Domain Analysis') && (
           <ResearchSection section={sectionByHeading('Frequency-Domain Analysis')!} />
         )}
@@ -176,6 +201,24 @@ export default function ResearchThz() {
           <FigureCards figures={analysisFigures} />
           <FigureCards figures={supportingFigures} />
         </section>
+
+        {sectionByHeading('Measurement Reliability and Noise Investigation') && (
+          <section aria-labelledby="measurement-reliability">
+            <div id="measurement-reliability">
+              <ResearchSection
+                section={sectionByHeading('Measurement Reliability and Noise Investigation')!}
+              />
+            </div>
+            <FigureCards figures={reliabilityFigures} />
+          </section>
+        )}
+
+        {['Environmental Interference Mechanisms Considered', 'Mitigation and Process Improvements'].map(
+          (heading) => {
+            const section = sectionByHeading(heading);
+            return section ? <ResearchSection key={heading} section={section} /> : null;
+          },
+        )}
 
         {['My Contribution', 'Tools and Methods', 'Challenges and Limitations', 'What I Learned'].map(
           (heading) => {
