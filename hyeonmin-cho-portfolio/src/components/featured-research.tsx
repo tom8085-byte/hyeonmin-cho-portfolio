@@ -3,28 +3,30 @@ import { ArrowRight } from 'lucide-react';
 import { featuredResearch } from '@/data/roboticsPortfolioData';
 import { SectionHeading } from './section-heading';
 
-/** Restrained CSS-based waveform, presented as a decorative illustration. */
-function Waveform() {
+function ResearchSignalFigure() {
   return (
-    <figure className="border border-border bg-background p-4" aria-hidden="false">
-      <svg viewBox="0 0 400 140" className="w-full h-auto" role="img" aria-label="Decorative terahertz-style waveform illustration">
-        <line x1="0" y1="70" x2="400" y2="70" stroke="hsl(215 30% 18%)" strokeWidth="1" />
-        <path
-          d="M0,70 C30,70 40,68 55,70 C70,72 80,70 95,70 C110,70 118,20 130,20 C142,20 148,120 160,120 C172,120 178,45 190,45 C202,45 208,95 220,95 C232,95 238,58 250,58 C262,58 268,80 280,80 C292,80 300,66 315,68 C330,70 345,70 360,70 L400,70"
-          fill="none"
-          stroke="hsl(188 100% 50%)"
-          strokeWidth="1.5"
+    <figure className="overflow-hidden border border-border bg-background">
+      <div className="flex items-center justify-between gap-3 border-b border-border px-3 py-2 font-mono text-[9px] tracking-[0.14em] text-primary">
+        <span>REFERENCE FIGURE</span>
+        <span>THz SIGNAL CONTEXT</span>
+      </div>
+      <a
+        href="/research/thz-water-vapor-response.svg"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+      >
+        <img
+          src="/research/thz-water-vapor-response.svg"
+          alt="Comparison of terahertz time-domain current and frequency-domain amplitude with and without water vapor."
+          width="1658"
+          height="574"
+          decoding="async"
+          className="block h-auto w-full"
         />
-        <path
-          d="M0,70 L400,70"
-          fill="none"
-          stroke="hsl(188 100% 50% / 0.15)"
-          strokeWidth="24"
-          strokeDasharray="1 7"
-        />
-      </svg>
-      <figcaption className="mt-2 font-mono text-[10px] text-muted-foreground tracking-wider">
-        DECORATIVE ILLUSTRATION — THz TIME-DOMAIN SIGNAL (NOT MEASURED DATA)
+      </a>
+      <figcaption className="border-t border-border px-3 py-2 font-mono text-[9px] leading-relaxed tracking-[0.08em] text-muted-foreground">
+        SUPPLIED COMPARISON — WATER-VAPOR EFFECTS IN TIME AND FREQUENCY DOMAINS
       </figcaption>
     </figure>
   );
@@ -80,7 +82,7 @@ export function FeaturedResearch() {
             </div>
 
             <div className="lg:pt-8">
-              <Waveform />
+              <ResearchSignalFigure />
             </div>
           </div>
         </article>
