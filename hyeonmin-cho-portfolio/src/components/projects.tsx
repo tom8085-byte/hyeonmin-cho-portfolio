@@ -96,7 +96,7 @@ export function Projects() {
           title="Selected Projects"
           subtitle="Team and individual engineering work in embedded sensing, data-oriented systems, and applied programming."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {visible.map((p) => (
             <ProjectCard key={p.id} project={p} />
           ))}
