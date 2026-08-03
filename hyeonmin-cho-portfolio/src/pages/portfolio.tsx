@@ -38,7 +38,11 @@ export default function Portfolio() {
       sessionStorage.removeItem(RESTORE_PORTFOLIO_SCROLL_KEY);
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => {
-          window.scrollTo({ top: Number.isFinite(savedPosition) ? savedPosition : 0, behavior: 'auto' });
+          const root = document.documentElement;
+          const previousScrollBehavior = root.style.scrollBehavior;
+          root.style.scrollBehavior = 'auto';
+          window.scrollTo(0, Number.isFinite(savedPosition) ? savedPosition : 0);
+          root.style.scrollBehavior = previousScrollBehavior;
         });
       });
     } else {
