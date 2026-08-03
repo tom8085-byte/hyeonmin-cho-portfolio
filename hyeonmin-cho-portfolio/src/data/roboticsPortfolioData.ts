@@ -117,7 +117,7 @@ export const hero = {
   metadata: 'B.S. Expected Feb. 2027 · GPA 3.97/4.50 · Busan, Republic of Korea',
 };
 
-export type ResearchPathwayPhase = 'experience' | 'future' | 'goal';
+export type ResearchPathwayPhase = 'experience' | 'training' | 'future' | 'goal';
 
 export interface ResearchPathwayStep {
   title: string;
@@ -135,7 +135,7 @@ export const about = {
     { title: 'Sensor and Data Acquisition', phase: 'experience' },
     { title: 'Embedded and IoT Systems', phase: 'experience' },
     { title: 'Underwater Drone Operation & Maintenance', phase: 'experience' },
-    { title: 'Power Semiconductor Technologies', phase: 'future' },
+    { title: 'Power Semiconductor Technologies', phase: 'training' },
     { title: 'AI and Intelligent Control', phase: 'future' },
     { title: 'Intelligent Autonomous Robotics', phase: 'goal' },
   ] satisfies ResearchPathwayStep[],
