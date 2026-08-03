@@ -36,6 +36,13 @@ export interface ResearchFigure {
   layout?: 'wide' | 'standard';
 }
 
+export interface ExperienceActivity {
+  title: string;
+  date: string;
+  duration: string;
+  description: string;
+}
+
 export interface ContentRecord {
   id: string;
   title: string;
@@ -59,6 +66,9 @@ export interface ContentRecord {
   image?: string;
   imageAlt?: string;
   imageCaption?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  activities?: ExperienceActivity[];
   externalLink?: string;
   route?: string;
   featured: boolean;
@@ -920,11 +930,51 @@ export const experiences: ContentRecord[] = [
     id: 'busan-un-week-supporter',
     title: 'UNs Supporter, 2025 Busan UN Week',
     organization: 'Busan Global City Foundation',
+    role: 'Supporter',
     period: 'April 2025 – November 2025',
     location: 'Busan, Republic of Korea',
     route: '/experience/busan-un-week-supporter',
     shortDescription:
       'Collaborated with international participants on festival projects and volunteer activities, produced magazine content, and edited program videos.',
+    detailedDescription:
+      'Collaborated with international participants through the 2025 Busan UN Week supporter program. Contributed to public-engagement events, operated promotional booths, supported peace-themed community programs, produced magazine content, and edited program videos.',
+    image: '/experience/busan-un-week-supporter-field-photo.svg',
+    imageAlt:
+      'Hyeonmin Cho assisting an international participant at a 2025 Busan UN Week supporter booth.',
+    imageCaption:
+      'Public-engagement activity as a UNs Supporter during the 2025 Busan UN Week program.',
+    imageWidth: 2048,
+    imageHeight: 1150,
+    activities: [
+      {
+        title: 'Global Gathering 2025 Promotional Booth',
+        date: 'May 24, 2025',
+        duration: '4 hours',
+        description:
+          'Operated a promotional booth at the 20th Busan Global Gathering (Global Gathering 2025).',
+      },
+      {
+        title: 'Walk, Peace in Busan',
+        date: 'September 27, 2025',
+        duration: '8 hours',
+        description:
+          'Participated as a supporter in the peace walk organized with Rotary International District 3661.',
+      },
+      {
+        title: '80th United Nations Day Commemoration',
+        date: 'October 24, 2025',
+        duration: '6 hours',
+        description:
+          'Supported the commemorative program marking the 80th anniversary of United Nations Day.',
+      },
+      {
+        title: 'UN Peace Festival Promotional Booth',
+        date: 'October 25–26, 2025',
+        duration: '6.5 hours',
+        description:
+          'Operated the UNs Supporters promotional booth across two festival shifts: October 25 from 13:30 to 16:00 and October 26 from 10:00 to 14:00.',
+      },
+    ],
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1072,8 +1122,6 @@ export const certifications: ContentRecord[] = [
 
 export const contact = {
   heading: 'LET’S CONNECT',
-  text:
-    'I welcome conversations about graduate research, intelligent robotic systems, embedded sensing, terahertz technologies, and collaborative engineering projects.',
   primaryButton: 'Email Hyeonmin',
   emailLink: 'mailto:tom8085@g.kmou.ac.kr',
 };
