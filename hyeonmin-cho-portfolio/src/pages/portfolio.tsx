@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type MouseEvent } from 'react';
 import { Navigation } from '@/components/nav';
 import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
@@ -16,6 +16,17 @@ const PORTFOLIO_SCROLL_KEY = 'portfolio-scroll-position';
 const RESTORE_PORTFOLIO_SCROLL_KEY = 'restore-portfolio-scroll';
 
 export default function Portfolio() {
+  const rememberPositionBeforeDetailNavigation = (event: MouseEvent<HTMLDivElement>) => {
+    const target = event.target as Element;
+    const link = target.closest<HTMLAnchorElement>('a[href]');
+    if (!link) return;
+
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin === window.location.origin && destination.pathname !== '/') {
+      sessionStorage.setItem(PORTFOLIO_SCROLL_KEY, String(window.scrollY));
+    }
+  };
+
   useEffect(() => {
     let frame = 0;
 
@@ -58,7 +69,10 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+    <div
+      onClickCapture={rememberPositionBeforeDetailNavigation}
+      className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary"
+    >
       <Navigation />
       <main>
         <Hero />
