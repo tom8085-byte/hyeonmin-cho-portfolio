@@ -40,13 +40,15 @@ function ProjectCard({ project }: { project: ContentRecord }) {
         </div>
       )}
 
-      <ul className="mt-4 flex flex-wrap gap-1.5 list-none">
-        {project.technologies?.slice(0, 6).map((t) => (
-          <li key={t} className="px-2 py-0.5 text-[11px] font-mono text-foreground/80 bg-secondary border border-border">
-            {t}
-          </li>
-        ))}
-      </ul>
+      {project.id !== 'machine-learning-textbook-contribution' && (
+        <ul className="mt-4 flex flex-wrap gap-1.5 list-none">
+          {project.technologies?.slice(0, 6).map((t) => (
+            <li key={t} className="px-2 py-0.5 text-[11px] font-mono text-foreground/80 bg-secondary border border-border">
+              {t}
+            </li>
+          ))}
+        </ul>
+      )}
 
       {project.outcomes?.[0] && (
         <div className="mt-4">
