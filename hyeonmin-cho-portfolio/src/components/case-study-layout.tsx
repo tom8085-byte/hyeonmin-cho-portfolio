@@ -1,6 +1,8 @@
-import type { ReactNode } from 'react';
-import { Link } from 'wouter';
+import type { MouseEvent, ReactNode } from 'react';
+import { Link, useLocation } from 'wouter';
 import { ArrowLeft } from 'lucide-react';
+
+const RESTORE_PORTFOLIO_SCROLL_KEY = 'restore-portfolio-scroll';
 
 interface CaseStudyLayoutProps {
   eyebrow?: string;
@@ -11,11 +13,20 @@ interface CaseStudyLayoutProps {
 }
 
 export function CaseStudyLayout({ eyebrow, title, originalTitle, meta, children }: CaseStudyLayoutProps) {
+  const [, navigate] = useLocation();
+
+  const handleBackToPortfolio = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    sessionStorage.setItem(RESTORE_PORTFOLIO_SCROLL_KEY, 'true');
+    navigate('/');
+  };
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-[860px] px-4 sm:px-6 py-16">
         <Link
           href="/"
+          onClick={handleBackToPortfolio}
           className="inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-primary transition-colors mb-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary rounded-sm"
         >
           <ArrowLeft className="w-4 h-4" aria-hidden="true" />
@@ -38,6 +49,7 @@ export function CaseStudyLayout({ eyebrow, title, originalTitle, meta, children 
         <footer className="mt-16 pt-8 border-t border-border">
           <Link
             href="/"
+            onClick={handleBackToPortfolio}
             className="inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary rounded-sm"
           >
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
