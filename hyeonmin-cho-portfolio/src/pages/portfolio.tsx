@@ -5,7 +5,6 @@ import { About } from '@/components/about';
 import { ResearchDirection } from '@/components/research-direction';
 import { FeaturedResearch } from '@/components/featured-research';
 import { Projects } from '@/components/projects';
-import { Skills } from '@/components/skills';
 import { Education } from '@/components/education';
 import { Experience } from '@/components/experience';
 import { Training } from '@/components/training';
@@ -83,7 +82,6 @@ export default function Portfolio() {
         <ResearchDirection />
         <FeaturedResearch />
         <Projects />
-        <Skills />
         <Education />
         <Experience />
         <Training />
