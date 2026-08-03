@@ -1,4 +1,4 @@
-import { useEffect, type MouseEvent } from 'react';
+import { useEffect, useRef, type MouseEvent } from 'react';
 import { Navigation } from '@/components/nav';
 import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
@@ -16,6 +16,8 @@ const PORTFOLIO_SCROLL_KEY = 'portfolio-scroll-position';
 const RESTORE_PORTFOLIO_SCROLL_KEY = 'restore-portfolio-scroll';
 
 export default function Portfolio() {
+  const positionLockedForDetailNavigation = useRef(false);
+
   const rememberPositionBeforeDetailNavigation = (event: MouseEvent<HTMLDivElement>) => {
     const target = event.target as Element;
     const link = target.closest<HTMLAnchorElement>('a[href]');
@@ -23,6 +25,7 @@ export default function Portfolio() {
 
     const destination = new URL(link.href, window.location.href);
     if (destination.origin === window.location.origin && destination.pathname !== '/') {
+      positionLockedForDetailNavigation.current = true;
       sessionStorage.setItem(PORTFOLIO_SCROLL_KEY, String(window.scrollY));
     }
   };
@@ -37,7 +40,7 @@ export default function Portfolio() {
     const handleScroll = () => {
       if (frame) return;
       frame = window.requestAnimationFrame(() => {
-        saveScrollPosition();
+        if (!positionLockedForDetailNavigation.current) saveScrollPosition();
         frame = 0;
       });
     };
@@ -64,7 +67,7 @@ export default function Portfolio() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (frame) window.cancelAnimationFrame(frame);
-      saveScrollPosition();
+      if (!positionLockedForDetailNavigation.current) saveScrollPosition();
     };
   }, []);
 
