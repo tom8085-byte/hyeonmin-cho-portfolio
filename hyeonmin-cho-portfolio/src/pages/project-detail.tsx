@@ -47,6 +47,20 @@ function ProjectDiagram({ projectId }: { projectId: string }) {
     return <DeepLearningComparisonDiagram />;
   }
 
+  if (projectId === 'machine-learning-textbook-contribution') {
+    return (
+      <SystemFlowDiagram
+        label="TEXTBOOK CONTRIBUTION WORKFLOW"
+        stages={[
+          'Data Processing Foundations',
+          'Regression and ML Examples',
+          'R/Python Testing',
+          'Figures and Proofreading',
+        ]}
+      />
+    );
+  }
+
   return null;
 }
 
@@ -94,7 +108,12 @@ export default function ProjectDetail({ projectId }: { projectId: string }) {
 
   return (
     <CaseStudyLayout
-      eyebrow="ENGINEERING PROJECT"
+      eyebrow={
+        project.id === 'machine-learning-textbook-contribution' ||
+        project.id === 'deep-learning-code-development'
+          ? 'TECHNICAL CONTRIBUTION'
+          : 'ENGINEERING PROJECT'
+      }
       title={project.title}
       originalTitle={project.originalTitle}
       meta={[project.role ?? '', project.organization ?? '', project.period ?? '', project.location ?? '']}
