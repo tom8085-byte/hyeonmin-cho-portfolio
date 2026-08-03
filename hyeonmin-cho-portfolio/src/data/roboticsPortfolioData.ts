@@ -585,19 +585,82 @@ export const projects: ContentRecord[] = [
     visible: true,
   },
   {
+    id: 'machine-learning-textbook-contribution',
+    title: 'Machine Learning Textbook Code Development',
+    originalTitle: '『데이터 분석과 머신러닝 실전』',
+    organization: 'Published Textbook · Parkyoungsa',
+    role: 'Technical Contributor',
+    period: 'June 2024 – January 2026',
+    problem:
+      'A textbook that teaches data analysis and machine learning in both R and Python requires runnable examples and careful consistency checks across code, figures, and explanations.',
+    shortDescription:
+      'Developed and tested R/Python educational examples for data preprocessing, regression, traditional machine-learning models, ensemble methods, and neural networks for the published textbook 『데이터 분석과 머신러닝 실전』.',
+    detailedDescription:
+      'Contributed technical support to the published textbook 『데이터 분석과 머신러닝 실전』 by developing and testing R/Python examples across data processing, regression, traditional machine learning, ensemble models, and neural networks. Also supported figure preparation and manuscript proofreading. This work is presented as a technical contribution, not authorship.',
+    individualContribution:
+      'Developed and tested instructional examples, checked code and outputs for consistency, supported figure preparation, and proofread technical explanations before publication.',
+    methods: [
+      'R/Python example development',
+      'NumPy and Pandas data processing',
+      'Regression implementation',
+      'Machine-learning model testing',
+      'Figure preparation',
+      'Technical proofreading',
+    ],
+    technologies: [
+      'R',
+      'Python',
+      'NumPy',
+      'Pandas',
+      'TensorFlow',
+      'Regression',
+      'Traditional ML',
+      'Ensemble Methods',
+      'Neural Networks',
+      'Technical Review',
+    ],
+    outcomes: [
+      'Contributed reviewed instructional code and technical materials to a textbook published by Parkyoungsa on January 5, 2026.',
+    ],
+    limitations: [
+      'The contribution was technical and is not represented as book authorship.',
+      'OpenCV image-processing and public-data API examples are not included in the contribution scope presented here.',
+    ],
+    lessonsLearned: [
+      'Educational code must be runnable, reproducible, and aligned with the figures and explanations that learners use to interpret it.',
+    ],
+    evidenceStatus: 'available',
+    evidenceItems: [
+      {
+        title: '『데이터 분석과 머신러닝 실전』',
+        type: 'Official Publisher Book Page',
+        date: 'January 5, 2026',
+        description:
+          'Official Parkyoungsa page for the published textbook 『데이터 분석과 머신러닝 실전』.',
+        href: 'https://www.pybook.co.kr/mall/book/pys?goodsno=9423',
+        buttonLabel: 'View Published Book',
+        altText:
+          'Official Parkyoungsa book page for the published textbook Data Analysis and Machine Learning Practice.',
+      },
+    ],
+    route: '/projects/machine-learning-textbook-contribution',
+    featured: true,
+    visible: true,
+  },
+  {
     id: 'deep-learning-code-development',
-    title: 'Deep Learning Manuscript and Code Development',
+    title: 'Deep Learning Textbook Manuscript and Code Development',
     organization: 'Manuscript in Preparation',
     role: 'Code Development and Technical Review',
     period: 'June 2025 – Present',
     problem:
       'Educational comparisons of neural-network architectures require consistent data, reproducible settings, and technically clear examples.',
     shortDescription:
-      'Developed and reviewed educational code examples for DNN, CNN, RNN, and Transformer architectures in support of a deep-learning manuscript and R/Python-based instructional materials.',
+      'Developed and tested R and Python/TensorFlow educational examples for DNN, CNN, RNN, and Transformer architectures in support of a deep-learning textbook manuscript.',
     detailedDescription:
-      'The work organizes model examples and comparisons around common experimental conditions while retaining architecture-specific examples for educational clarity.',
+      'The ongoing work develops instructional examples for deep-learning architectures, using R and Python where appropriate and Python/TensorFlow for architecture-focused experiments. Model comparisons use common experimental conditions while retaining architecture-specific examples for educational clarity.',
     individualContribution:
-      'Developed and tested example code, reviewed model-comparison conditions, and checked figures and explanatory content for technical clarity.',
+      'Developed and tested DNN, CNN, RNN, and Transformer examples; reviewed model-comparison conditions; and checked code, figures, and explanatory content for technical clarity.',
     methods: [
       'Reproducible experiments',
       'Consistent model comparison',
@@ -619,7 +682,7 @@ export const projects: ContentRecord[] = [
       'Technical Review',
     ],
     outcomes: [
-      'Developed and reviewed instructional code and technical material for a manuscript in preparation.',
+      'Developed and reviewed instructional code and technical material for a deep-learning textbook manuscript in preparation.',
     ],
     limitations: [
       'The manuscript is in preparation and should not be represented as a published book.',
@@ -754,6 +817,52 @@ export const projectCaseStudies: Record<string, CaseStudy> = {
       },
     ],
   },
+  'machine-learning-textbook-contribution': {
+    recordId: 'machine-learning-textbook-contribution',
+    sections: [
+      {
+        heading: 'Publication Context',
+        paragraphs: [
+          '『데이터 분석과 머신러닝 실전』 was published by Parkyoungsa on January 5, 2026. My role in the project was technical contribution rather than authorship.',
+        ],
+      },
+      {
+        heading: 'Technical Contribution Scope',
+        paragraphs: [
+          'The contribution covered development and testing of instructional R/Python examples, consistency checks between code and outputs, figure preparation, and proofreading of technical explanations.',
+        ],
+      },
+      {
+        heading: 'Data Processing Foundations',
+        paragraphs: [
+          'Prepared and checked examples using NumPy arrays and Pandas Series and DataFrames, including data creation, transformation, indexing, calculation, descriptive statistics, selection, modification, sorting, and value-frequency inspection.',
+        ],
+      },
+      {
+        heading: 'Regression Examples',
+        paragraphs: [
+          'Developed and tested instructional examples covering least-squares simple linear regression, mean squared error, gradient-descent-based simple and multiple linear regression, and TensorFlow implementations of linear, multiple linear, and logistic regression.',
+        ],
+      },
+      {
+        heading: 'Machine-Learning Examples',
+        paragraphs: [
+          'Supported examples spanning data preprocessing, traditional machine-learning models, ensemble methods, and neural-network models in R and Python.',
+        ],
+      },
+      {
+        heading: 'Figures and Proofreading',
+        paragraphs: [
+          'Supported figure preparation and reviewed code, outputs, and explanatory text so that the instructional materials remained technically consistent and readable.',
+        ],
+      },
+      { heading: 'My Contribution', paragraphs: [projects[2].individualContribution ?? ''] },
+      {
+        heading: 'Publication Status and Attribution',
+        paragraphs: projects[2].limitations ?? [],
+      },
+    ],
+  },
   'deep-learning-code-development': {
     recordId: 'deep-learning-code-development',
     sections: [
@@ -793,7 +902,7 @@ export const projectCaseStudies: Record<string, CaseStudy> = {
           'Example code is checked for consistent structure, explanatory comments, data-shape correctness, evaluation logic, and alignment between figures and written explanations.',
         ],
       },
-      { heading: 'My Contribution', paragraphs: [projects[2].individualContribution ?? ''] },
+      { heading: 'My Contribution', paragraphs: [projects[3].individualContribution ?? ''] },
       {
         heading: 'Example Code',
         paragraphs: [
@@ -802,7 +911,7 @@ export const projectCaseStudies: Record<string, CaseStudy> = {
       },
       {
         heading: 'Results and Limitations',
-        paragraphs: projects[2].limitations ?? [],
+        paragraphs: projects[3].limitations ?? [],
       },
     ],
   },
