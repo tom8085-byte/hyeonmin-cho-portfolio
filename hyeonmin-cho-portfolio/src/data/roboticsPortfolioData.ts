@@ -117,20 +117,30 @@ export const hero = {
   metadata: 'B.S. Expected Feb. 2027 · GPA 3.97/4.50 · Busan, Republic of Korea',
 };
 
+export type ResearchPathwayPhase = 'experience' | 'future' | 'goal';
+
+export interface ResearchPathwayStep {
+  title: string;
+  phase: ResearchPathwayPhase;
+}
+
 export const about = {
   text:
     'My engineering foundation has developed through experimental research in terahertz optoelectronics, sensor-based embedded systems, IoT communication, and data-oriented programming. These experiences taught me how reliable sensing, measurement, communication, and analysis work together within an engineering system. I now hope to extend this foundation toward intelligent robotics, including autonomous underwater vehicles, marine robots, navigation, and control.',
   pathwayLabel: 'RESEARCH PATHWAY',
-  pathwaySupport: 'A future direction grounded in completed research, projects, and coursework',
+  pathwaySupport:
+    'Connecting completed research and field experience with future study toward intelligent robotics.',
   pathway: [
-    'THz Measurement',
-    'Sensor and Data Acquisition',
-    'Embedded and IoT Systems',
-    'Control and Intelligence',
-    'Autonomous and Marine Robotics',
-  ],
+    { title: 'THz Measurement', phase: 'experience' },
+    { title: 'Sensor and Data Acquisition', phase: 'experience' },
+    { title: 'Embedded and IoT Systems', phase: 'experience' },
+    { title: 'Underwater Drone Operation & Maintenance', phase: 'experience' },
+    { title: 'Power Semiconductor Technologies', phase: 'future' },
+    { title: 'AI and Intelligent Control', phase: 'future' },
+    { title: 'Intelligent Autonomous Robotics', phase: 'goal' },
+  ] satisfies ResearchPathwayStep[],
   pathwayNote:
-    'Autonomous and marine robotics is the next research direction, not a claim of completed AUV research.',
+    'My long-term goal is to develop intelligent robotic systems by integrating artificial intelligence with sensing, embedded control, and power semiconductor technologies.',
 };
 
 export type FoundationKind = 'future' | 'project' | 'research';
@@ -938,7 +948,7 @@ export const experiences: ContentRecord[] = [
       'Collaborated with international participants on festival projects and volunteer activities, produced magazine content, and edited program videos.',
     detailedDescription:
       'Collaborated with international participants through the 2025 Busan UN Week supporter program. Contributed to public-engagement events, operated promotional booths, supported peace-themed community programs, produced magazine content, and edited program videos.',
-    image: '/experience/busan-un-week-supporter-field-photo.svg',
+    image: '/experience/busan-un-week-supporter-field-photo.jpg',
     imageAlt:
       'Hyeonmin Cho assisting an international participant at a 2025 Busan UN Week supporter booth.',
     imageCaption:
