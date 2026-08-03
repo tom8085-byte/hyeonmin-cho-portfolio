@@ -9,10 +9,7 @@ export function Contact() {
       <div className="mx-auto max-w-[1180px] px-4 sm:px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <p className="font-mono text-xs tracking-[0.3em] text-primary mb-4">{contact.heading}</p>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-6">Contact</h2>
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-10">
-            {contact.text}
-          </p>
+          <h2 className="text-3xl md:text-4xl font-black text-foreground mb-10">Contact</h2>
 
           <a
             href={contact.emailLink}
