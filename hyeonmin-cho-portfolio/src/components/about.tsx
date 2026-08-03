@@ -2,6 +2,24 @@ import { ArrowRight, ArrowDown } from 'lucide-react';
 import { about } from '@/data/roboticsPortfolioData';
 import { SectionHeading } from './section-heading';
 
+const phaseStyles = {
+  experience: {
+    label: 'Completed Experience',
+    card: 'border-border bg-background text-foreground/90',
+    badge: 'text-emerald-400',
+  },
+  future: {
+    label: 'Future Research Focus',
+    card: 'border-blue-500/50 bg-blue-500/5 text-foreground',
+    badge: 'text-blue-400',
+  },
+  goal: {
+    label: 'Long-Term Goal',
+    card: 'border-primary/60 bg-primary/10 text-primary',
+    badge: 'text-primary',
+  },
+} as const;
+
 export function About() {
   return (
     <section id="about" className="py-20 scroll-mt-14">
@@ -16,29 +34,35 @@ export function About() {
           <p className="font-mono text-xs tracking-[0.25em] text-primary mb-2">{about.pathwayLabel}</p>
           <p className="text-sm text-muted-foreground mb-6">{about.pathwaySupport}</p>
 
-          <ol className="flex flex-col md:flex-row md:items-center gap-3 md:gap-2 list-none">
+          <ol className="flex flex-col lg:flex-row lg:items-stretch gap-3 lg:gap-2 list-none">
             {about.pathway.map((step, i) => (
-              <li key={step} className="flex flex-col md:flex-row md:items-center gap-3 md:gap-2 md:flex-1">
+              <li
+                key={step.title}
+                className="flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-2 lg:flex-1"
+              >
                 <span
-                  className={`px-4 py-3 text-sm text-center border w-full md:w-auto md:flex-1 ${
-                    i === about.pathway.length - 1
-                      ? 'border-primary/60 bg-primary/10 text-primary font-semibold'
-                      : 'border-border bg-background text-foreground/90'
-                  }`}
+                  className={`px-3 py-3 text-sm text-center border w-full lg:flex-1 lg:min-h-28 flex flex-col items-center justify-center ${phaseStyles[step.phase].card}`}
                 >
-                  {step}
+                  <span
+                    className={`mb-2 font-mono text-[9px] leading-tight tracking-[0.12em] uppercase ${phaseStyles[step.phase].badge}`}
+                  >
+                    {phaseStyles[step.phase].label}
+                  </span>
+                  <span className={step.phase === 'goal' ? 'font-semibold' : undefined}>{step.title}</span>
                 </span>
                 {i < about.pathway.length - 1 && (
                   <>
-                    <ArrowRight className="hidden md:block w-4 h-4 text-muted-foreground shrink-0" aria-hidden="true" />
-                    <ArrowDown className="md:hidden w-4 h-4 text-muted-foreground self-center" aria-hidden="true" />
+                    <ArrowRight className="hidden lg:block w-4 h-4 text-muted-foreground shrink-0" aria-hidden="true" />
+                    <ArrowDown className="lg:hidden w-4 h-4 text-muted-foreground self-center" aria-hidden="true" />
                   </>
                 )}
               </li>
             ))}
           </ol>
 
-          <p className="mt-6 text-xs text-muted-foreground italic">{about.pathwayNote}</p>
+          <p className="mt-6 max-w-4xl text-sm leading-relaxed text-foreground/80 border-l-2 border-primary pl-4">
+            {about.pathwayNote}
+          </p>
         </div>
       </div>
     </section>
