@@ -17,6 +17,11 @@ export function CaseStudyLayout({ eyebrow, title, originalTitle, meta, children 
 
   const handleBackToPortfolio = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, window.scrollY);
+    root.style.scrollBehavior = previousScrollBehavior;
     sessionStorage.setItem(RESTORE_PORTFOLIO_SCROLL_KEY, 'true');
     navigate('/');
   };
