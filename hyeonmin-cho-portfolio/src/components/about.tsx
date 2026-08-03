@@ -8,6 +8,11 @@ const phaseStyles = {
     card: 'border-border bg-background text-foreground/90',
     badge: 'text-emerald-400',
   },
+  training: {
+    label: 'Training Experience',
+    card: 'border-border bg-background text-foreground/90',
+    badge: 'text-emerald-400',
+  },
   future: {
     label: 'Future Research Focus',
     card: 'border-blue-500/50 bg-blue-500/5 text-foreground',
