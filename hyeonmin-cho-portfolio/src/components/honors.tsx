@@ -1,4 +1,5 @@
-import { BadgeCheck, Award } from 'lucide-react';
+import { Link } from 'wouter';
+import { BadgeCheck, Award, ArrowRight } from 'lucide-react';
 import { honors, certifications } from '@/data/roboticsPortfolioData';
 import { SectionHeading } from './section-heading';
 
@@ -16,12 +17,21 @@ export function Honors() {
           {visible.map((h) => (
             <div key={h.id} className="border border-border bg-background p-6 flex items-start gap-4">
               <Award className="w-6 h-6 text-primary shrink-0 mt-0.5" aria-hidden="true" />
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-base font-bold text-foreground leading-snug">{h.title}</h3>
                 {h.organization && <p className="mt-1 text-sm text-muted-foreground">{h.organization}</p>}
                 {h.period && <p className="mt-1 font-mono text-xs text-muted-foreground">{h.period}</p>}
                 {h.shortDescription && (
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{h.shortDescription}</p>
+                )}
+                {h.route && (
+                  <Link
+                    href={h.route}
+                    className="mt-4 inline-flex items-center gap-2 font-mono text-xs text-primary hover:text-foreground transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary rounded-sm"
+                  >
+                    Learn More
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Link>
                 )}
               </div>
             </div>

@@ -1251,6 +1251,9 @@ export const honors: ContentRecord[] = [
     title: 'Commendation for Exemplary Military Service',
     organization: 'Republic of Korea Army',
     period: 'November 3, 2022',
+    shortDescription:
+      'Recognized for exemplary service in patrol-boat radar and communications operations, coastal mission readiness, and improvements to barracks life.',
+    route: '/honors/exemplary-military-service',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1265,6 +1268,35 @@ export const honors: ContentRecord[] = [
     visible: false,
   },
 ];
+
+export const militaryCommendationDetail = {
+  honorId: 'exemplary-military-service',
+  certificateNumber: 'No. 130',
+  recipient: 'Corporal Hyeonmin Cho',
+  role: 'Radar and Communications Operator aboard a Patrol Boat',
+  unit: '2nd Battalion, 169th Infantry Brigade',
+  issuer: 'Lieutenant Colonel Cha Dae-seong, Battalion Commander',
+  date: 'November 3, 2022',
+  image: '/honors/military-commendation-2022.webp',
+  imageAlt:
+    'Republic of Korea Army certificate of commendation awarded to Corporal Hyeonmin Cho on November 3, 2022.',
+  imageWidth: 1062,
+  imageHeight: 1558,
+  summary:
+    'Awarded for exemplary service as a patrol-boat radar and communications operator, including maintaining deployment readiness, supporting coastal surveillance operations, and contributing to improvements in barracks life.',
+  englishTranslation: [
+    'Certificate of Commendation',
+    'Corporal Hyeonmin Cho, Patrol Boat Unit',
+    'While serving as a radar and communications operator aboard a patrol boat, he consistently upheld the values of devotion to country, mission accomplishment, and mutual respect.',
+    'In particular, during coastal surveillance operations, he contributed across the full scope of coastal mission performance—including maintaining deployment readiness and improving barracks life—to support flawless operational execution.',
+    'In recognition of these contributions, this commendation is awarded.',
+    'November 3, 2022\nCommander, 2nd Battalion, 169th Infantry Brigade\nLieutenant Colonel Cha Dae-seong',
+  ],
+  koreanTranscription:
+    '제130호\n\n표창장\n경비정 상병 조현민\n\n위 사람은 경비정 전탐통신병으로서 평소 위국헌신·책임완수·상호존중의 가치를 성실히 수행하여 왔으며 특히 해안경계작전 임무수행 간 완전작전을 위하여 출동대기태세 확립, 병영생활 개선 등 해안 임무수행 전반에 걸쳐 기여하였기에 이에 표창함.\n\n2022년 11월 3일\n제169보병여단 2대대장 중령 차대성',
+  translationNote:
+    'This English translation is provided for portfolio context and is not a certified translation.',
+};
 
 export const certifications: ContentRecord[] = [
   {

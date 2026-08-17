@@ -3,6 +3,7 @@ import Portfolio from '@/pages/portfolio';
 import ResearchThz from '@/pages/research-thz';
 import ProjectDetail from '@/pages/project-detail';
 import ExperienceDetail from '@/pages/experience-detail';
+import HonorDetail from '@/pages/honor-detail';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 
 function Router() {
@@ -15,6 +16,9 @@ function Router() {
       </Route>
       <Route path="/experience/:experienceId">
         {(params) => <ExperienceDetail experienceId={params.experienceId} />}
+      </Route>
+      <Route path="/honors/:honorId">
+        {(params) => <HonorDetail honorId={params.honorId} />}
       </Route>
       <Route component={NotFound} />
     </Switch>
