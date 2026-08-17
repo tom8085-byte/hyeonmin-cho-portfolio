@@ -66,7 +66,7 @@ export default function ExperienceDetail({ experienceId }: { experienceId: strin
           )}
 
           {experience.galleryImages?.map((image) => (
-            <figure key={image.src} className="experience-record mt-8 ml-4">
+            <figure key={image.src} className="experience-record experience-record--portrait mt-8">
               <div className="experience-record__label">
                 <span>{image.label}</span>
                 <span>{image.period ?? experience.period}</span>
