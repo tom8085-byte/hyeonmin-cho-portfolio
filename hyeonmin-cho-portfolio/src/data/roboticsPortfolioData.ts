@@ -51,6 +51,7 @@ export interface ExperienceGalleryImage {
   period?: string;
   width?: number;
   height?: number;
+  clickToEnlarge?: boolean;
 }
 
 export interface ContentRecord {
@@ -79,6 +80,7 @@ export interface ContentRecord {
   imageWidth?: number;
   imageHeight?: number;
   galleryImages?: ExperienceGalleryImage[];
+  galleryDisplay?: 'stack' | 'compact-grid';
   activities?: ExperienceActivity[];
   externalLink?: string;
   route?: string;
@@ -1133,16 +1135,41 @@ export const experiences: ContentRecord[] = [
   },
   {
     id: 'esl-program',
-    title: 'ESL Program',
+    title: 'International ESL Program',
     organization: 'Cebu International Academy',
     role: 'Program Participant',
     period: 'December 2023 – January 2024',
     location: 'Cebu, Philippines',
     route: '/experience/esl-program',
     shortDescription:
-      'Completed an intensive English-language program in an international learning environment.',
+      'Completed an eight-week intensive English-language program in an international learning environment.',
     detailedDescription:
-      'Completed an ESL program at Cebu International Academy, strengthening practical English communication through intensive study and daily interaction in an international environment.',
+      'Completed an eight-week ESL course at Cebu International Academy from December 3, 2023, to January 27, 2024. Strengthened practical English communication through intensive study and daily interaction in an international learning environment in Cebu, Philippines.',
+    galleryDisplay: 'compact-grid',
+    galleryImages: [
+      {
+        src: '/experience/esl-certificate-enhanced.webp',
+        alt: 'Certificate of Completion awarded to Cho Hyeonmin for completing the eight-week ESL course at Cebu International Academy.',
+        caption:
+          'Certificate of Completion for the eight-week ESL course at Cebu International Academy.',
+        label: 'PROGRAM CERTIFICATE',
+        period: 'January 26, 2024',
+        width: 1434,
+        height: 1097,
+        clickToEnlarge: true,
+      },
+      {
+        src: '/experience/esl-completion-photo-enhanced.webp',
+        alt: 'Hyeonmin Cho holding his ESL course certificate with a Cebu International Academy instructor at the completion ceremony.',
+        caption:
+          'ESL course completion ceremony at Cebu International Academy in Cebu, Philippines.',
+        label: 'COMPLETION CEREMONY',
+        period: 'January 2024',
+        width: 844,
+        height: 1230,
+        clickToEnlarge: true,
+      },
+    ],
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,

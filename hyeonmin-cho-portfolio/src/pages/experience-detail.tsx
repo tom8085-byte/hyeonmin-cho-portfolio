@@ -1,9 +1,15 @@
-import { useEffect } from 'react';
-import { experiences, training } from '@/data/roboticsPortfolioData';
+import { useEffect, useState } from 'react';
+import { ZoomIn, X } from 'lucide-react';
+import {
+  experiences,
+  training,
+  type ExperienceGalleryImage,
+} from '@/data/roboticsPortfolioData';
 import { CaseStudyLayout } from '@/components/case-study-layout';
 import NotFound from './not-found';
 
 export default function ExperienceDetail({ experienceId }: { experienceId: string }) {
+  const [expandedImage, setExpandedImage] = useState<ExperienceGalleryImage | null>(null);
   const experience = [...experiences, ...training].find(
     (item) => item.id === experienceId && item.visible && item.route?.startsWith('/experience/'),
   );
@@ -17,6 +23,23 @@ export default function ExperienceDetail({ experienceId }: { experienceId: strin
       document.title = 'Hyeonmin Cho | Electrical & Electronics Engineering Portfolio';
     };
   }, [experience]);
+
+  useEffect(() => {
+    if (!expandedImage) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setExpandedImage(null);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [expandedImage]);
 
   if (!experience) return <NotFound />;
 
@@ -65,26 +88,66 @@ export default function ExperienceDetail({ experienceId }: { experienceId: strin
             </figure>
           )}
 
-          {experience.galleryImages?.map((image) => (
-            <figure key={image.src} className="experience-record experience-record--portrait mt-8">
-              <div className="experience-record__label">
-                <span>{image.label}</span>
-                <span>{image.period ?? experience.period}</span>
-              </div>
-              <div className="experience-record__image-wrap">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  loading="lazy"
-                  decoding="async"
-                  className="experience-record__image"
-                />
-              </div>
-              <figcaption className="experience-record__caption">{image.caption}</figcaption>
-            </figure>
-          ))}
+          {experience.galleryImages && experience.galleryImages.length > 0 && (
+            <div
+              className={
+                experience.galleryDisplay === 'compact-grid'
+                  ? 'experience-gallery-grid'
+                  : 'experience-gallery-stack'
+              }
+            >
+              {experience.galleryImages.map((image) => (
+                <figure
+                  key={image.src}
+                  className={`experience-record ${
+                    experience.galleryDisplay === 'compact-grid'
+                      ? 'experience-record--compact'
+                      : 'experience-record--portrait'
+                  }`}
+                >
+                  <div className="experience-record__label">
+                    <span>{image.label}</span>
+                    <span>{image.period ?? experience.period}</span>
+                  </div>
+                  <div className="experience-record__image-wrap">
+                    {image.clickToEnlarge ? (
+                      <button
+                        type="button"
+                        className="experience-record__expand-button"
+                        onClick={() => setExpandedImage(image)}
+                        aria-label={`View larger: ${image.alt}`}
+                      >
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          width={image.width}
+                          height={image.height}
+                          loading="lazy"
+                          decoding="async"
+                          className="experience-record__image"
+                        />
+                        <span className="experience-record__expand-label">
+                          <ZoomIn className="h-4 w-4" aria-hidden="true" />
+                          View larger
+                        </span>
+                      </button>
+                    ) : (
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        width={image.width}
+                        height={image.height}
+                        loading="lazy"
+                        decoding="async"
+                        className="experience-record__image"
+                      />
+                    )}
+                  </div>
+                  <figcaption className="experience-record__caption">{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
         </section>
 
         {experience.activities && experience.activities.length > 0 && (
@@ -123,6 +186,35 @@ export default function ExperienceDetail({ experienceId }: { experienceId: strin
           </section>
         )}
       </div>
+
+      {expandedImage && (
+        <div
+          className="experience-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded image view"
+          onClick={() => setExpandedImage(null)}
+        >
+          <button
+            type="button"
+            className="experience-lightbox__close"
+            onClick={() => setExpandedImage(null)}
+            aria-label="Close expanded image"
+          >
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <div className="experience-lightbox__content" onClick={(event) => event.stopPropagation()}>
+            <img
+              src={expandedImage.src}
+              alt={expandedImage.alt}
+              width={expandedImage.width}
+              height={expandedImage.height}
+              className="experience-lightbox__image"
+            />
+            <p className="experience-lightbox__caption">{expandedImage.caption}</p>
+          </div>
+        </div>
+      )}
     </CaseStudyLayout>
   );
 }
