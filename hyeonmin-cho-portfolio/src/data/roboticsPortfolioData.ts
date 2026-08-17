@@ -1022,12 +1022,20 @@ export const experiences: ContentRecord[] = [
       'Led patrol-boat personnel while operating radio, GPS, radar, harbor communication, electrical-distribution, and military ROV systems.',
     detailedDescription:
       'Led troops during patrol operations by assigning duties, training team members, and reporting personnel and equipment readiness. Operated PRC-999K radios, GPS, radar, and harbor communication equipment; conducted communication checks with coastal units; reported communication quality; inspected and operated the vessel’s electrical distribution panel; and performed basic troubleshooting and minor repairs. Operated and maintained military ROVs, identified tether-related mobility constraints, and provided technical input to military AUV development by recommending fail-safe surfacing and other operational improvements.',
-    image: '/experience/patrol-boat-squad-photo.svg',
-    imageAlt:
-      'Hyeonmin Cho with fellow soldiers aboard a patrol boat at Pyeongtaek Naval Base; the other faces are obscured for privacy.',
-    imageCaption:
-      'Service record aboard a patrol boat at Pyeongtaek Naval Base. Other individuals are obscured for privacy.',
+    galleryDisplay: 'compact-grid',
     galleryImages: [
+      {
+        src: '/experience/patrol-boat-squad-photo.svg',
+        alt:
+          'Hyeonmin Cho with fellow soldiers aboard a patrol boat at Pyeongtaek Naval Base; the other faces are obscured for privacy.',
+        caption:
+          'Service record aboard a patrol boat at Pyeongtaek Naval Base. Other individuals are obscured for privacy.',
+        label: 'PATROL BOAT FIELD RECORD',
+        period: 'January 2022 – July 2023',
+        width: 1523,
+        height: 1033,
+        clickToEnlarge: true,
+      },
       {
         src: '/experience/squad-leader-spring-2023.webp',
         alt:
@@ -1038,6 +1046,7 @@ export const experiences: ContentRecord[] = [
         period: 'January 2023 – July 2023',
         width: 900,
         height: 1073,
+        clickToEnlarge: true,
       },
     ],
     evidenceStatus: 'pending',
@@ -1278,8 +1287,6 @@ export const honors: ContentRecord[] = [
     title: 'Commendation for Exemplary Military Service',
     organization: 'Republic of Korea Army',
     period: 'November 3, 2022',
-    shortDescription:
-      'Recognized for exemplary service in patrol-boat radar and communications operations, coastal mission readiness, and improvements to barracks life.',
     route: '/honors/exemplary-military-service',
     evidenceStatus: 'pending',
     evidenceItems: [],
@@ -1299,18 +1306,12 @@ export const honors: ContentRecord[] = [
 export const militaryCommendationDetail = {
   honorId: 'exemplary-military-service',
   certificateNumber: 'No. 130',
-  recipient: 'Corporal Hyeonmin Cho',
-  role: 'Radar and Communications Operator aboard a Patrol Boat',
-  unit: '2nd Battalion, 169th Infantry Brigade',
-  issuer: 'Lieutenant Colonel Cha Dae-seong, Battalion Commander',
   date: 'November 3, 2022',
   image: '/honors/military-commendation-2022.webp',
   imageAlt:
     'Republic of Korea Army certificate of commendation awarded to Corporal Hyeonmin Cho on November 3, 2022.',
   imageWidth: 1062,
   imageHeight: 1558,
-  summary:
-    'Awarded for exemplary service as a patrol-boat radar and communications operator, including maintaining deployment readiness, supporting coastal surveillance operations, and contributing to improvements in barracks life.',
   englishTranslation: [
     'Certificate of Commendation',
     'Corporal Hyeonmin Cho, Patrol Boat Unit',
@@ -1319,8 +1320,6 @@ export const militaryCommendationDetail = {
     'In recognition of these contributions, this commendation is awarded.',
     'November 3, 2022\nCommander, 2nd Battalion, 169th Infantry Brigade\nLieutenant Colonel Cha Dae-seong',
   ],
-  koreanTranscription:
-    '제130호\n\n표창장\n경비정 상병 조현민\n\n위 사람은 경비정 전탐통신병으로서 평소 위국헌신·책임완수·상호존중의 가치를 성실히 수행하여 왔으며 특히 해안경계작전 임무수행 간 완전작전을 위하여 출동대기태세 확립, 병영생활 개선 등 해안 임무수행 전반에 걸쳐 기여하였기에 이에 표창함.\n\n2022년 11월 3일\n제169보병여단 2대대장 중령 차대성',
   translationNote:
     'This English translation is provided for portfolio context and is not a certified translation.',
 };

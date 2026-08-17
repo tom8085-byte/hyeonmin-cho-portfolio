@@ -28,30 +28,6 @@ export default function HonorDetail({ honorId }: { honorId: string }) {
       meta={[honor.organization ?? '', detail.date]}
     >
       <div className="space-y-12">
-        <section aria-labelledby="award-summary">
-          <h2
-            id="award-summary"
-            className="text-xl font-bold text-foreground mb-3 border-l-2 border-primary pl-4"
-          >
-            Award Summary
-          </h2>
-          <p className="pl-4 text-muted-foreground leading-relaxed">{detail.summary}</p>
-
-          <dl className="mt-6 ml-4 grid gap-px border border-border bg-border sm:grid-cols-2">
-            {[
-              ['Recipient', detail.recipient],
-              ['Service Role', detail.role],
-              ['Unit', detail.unit],
-              ['Issued By', detail.issuer],
-            ].map(([label, value]) => (
-              <div key={label} className="bg-background p-4">
-                <dt className="font-mono text-[10px] tracking-[0.14em] text-primary">{label}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-foreground">{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
         <section aria-labelledby="english-translation">
           <h2
             id="english-translation"
@@ -109,17 +85,6 @@ export default function HonorDetail({ honorId }: { honorId: string }) {
           </figure>
         </section>
 
-        <section aria-labelledby="korean-transcription">
-          <h2
-            id="korean-transcription"
-            className="text-xl font-bold text-foreground mb-3 border-l-2 border-primary pl-4"
-          >
-            Korean Original · Transcription
-          </h2>
-          <p className="whitespace-pre-line border border-border bg-card/40 p-5 text-sm leading-8 text-muted-foreground sm:p-7">
-            {detail.koreanTranscription}
-          </p>
-        </section>
       </div>
     </CaseStudyLayout>
   );
