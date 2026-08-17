@@ -98,22 +98,22 @@ export const personal = {
   githubUrl: null as string | null,
   linkedinUrl: null as string | null,
   researchInterests: [
-    'Intelligent Robotics',
-    'AUV and Underwater Robotics',
-    'Navigation and Control',
-    'Embedded Sensing',
     'Semiconductor Devices',
-    'Terahertz Technologies',
+    'Robotics and Autonomous Systems',
     'Artificial Intelligence',
+    'Underwater Vehicles and Marine Robotics',
+    'Embedded Systems and Sensing',
+    'Communication Systems',
+    'Terahertz Spectroscopy',
   ],
 };
 
 export const hero = {
-  eyebrow: 'ELECTRICAL & ELECTRONICS ENGINEERING',
-  headline: 'Building from sensing toward intelligent autonomous systems.',
-  researchLine: 'THz Research · Embedded Sensing · Intelligent Robotics',
+  eyebrow: 'ELECTRICAL & ELECTRONIC ENGINEERING',
+  headline: 'Developing reliable technologies for complex environments.',
+  researchLine: 'Terahertz Spectroscopy · Communication Systems · Underwater Vehicles',
   introduction:
-    'I am an Electrical and Electronics Engineering student at Korea Maritime & Ocean University with undergraduate research experience in terahertz optoelectronics and hands-on project experience in embedded sensing, IoT, and data-driven systems. My goal is to integrate sensing hardware, control, and artificial intelligence to develop intelligent robotic systems, particularly for marine and unstructured environments.',
+    'I am an Electrical and Electronic Engineering student with experience in terahertz spectroscopy, communication systems, and underwater vehicles, and a strong interest in robotics and autonomous systems. I aim to apply curiosity, problem-solving, and innovation to develop practical technologies that improve safety and efficiency in complex environments.',
   metadata: 'B.S. Expected Feb. 2027 · GPA 3.97/4.50 · Busan, Republic of Korea',
 };
 
@@ -126,21 +126,21 @@ export interface ResearchPathwayStep {
 
 export const about = {
   text:
-    'My engineering foundation has developed through experimental research in terahertz optoelectronics, sensor-based embedded systems, IoT communication, and data-oriented programming. These experiences taught me how reliable sensing, measurement, communication, and analysis work together within an engineering system. I now hope to extend this foundation toward intelligent robotics, including autonomous underwater vehicles, marine robots, navigation, and control.',
+    'My experience spans terahertz spectroscopy, embedded sensing, communication systems, underwater-vehicle operation, semiconductor training, and applied artificial intelligence. Across laboratory research, engineering projects, and field operations, I have learned to connect reliable measurement, communication, hardware, and analysis. I plan to build on this foundation through graduate study in robotics and autonomous systems.',
   pathwayLabel: 'RESEARCH PATHWAY',
   pathwaySupport:
-    'Connecting completed research and field experience with future study toward intelligent robotics.',
+    'Connecting completed research, project, training, and field experience with graduate research in robotics and autonomous systems.',
   pathway: [
-    { title: 'THz Measurement', phase: 'experience' },
-    { title: 'Sensor and Data Acquisition', phase: 'experience' },
-    { title: 'Embedded and IoT Systems', phase: 'experience' },
-    { title: 'Underwater Drone Operation & Maintenance', phase: 'experience' },
-    { title: 'Power Semiconductor Technologies', phase: 'training' },
+    { title: 'THz Spectroscopy', phase: 'experience' },
+    { title: 'Communication Systems', phase: 'experience' },
+    { title: 'ROV Operation & Maintenance', phase: 'experience' },
+    { title: 'Embedded Sensing & IoT', phase: 'experience' },
+    { title: 'Semiconductor Technology', phase: 'training' },
     { title: 'AI and Intelligent Control', phase: 'future' },
-    { title: 'Intelligent Autonomous Robotics', phase: 'goal' },
+    { title: 'Robotics & Autonomous Systems', phase: 'goal' },
   ] satisfies ResearchPathwayStep[],
   pathwayNote:
-    'My long-term goal is to develop intelligent robotic systems by integrating artificial intelligence with sensing, embedded control, and power semiconductor technologies.',
+    'My goal is to develop reliable and practical autonomous technologies that improve safety and efficiency in marine and other complex environments.',
 };
 
 export type FoundationKind = 'future' | 'project' | 'research';
@@ -157,75 +157,74 @@ export interface ResearchDirectionData {
 export const researchDirections: ResearchDirectionData[] = [
   {
     id: 'intelligent-robotics',
-    title: 'Intelligent Robotics',
-    statusLabel: 'Future Research Direction',
+    title: 'Robotics & Autonomous Systems',
+    statusLabel: 'Experience-Based Research Interest',
     kind: 'future',
     topics: [
       'Autonomous systems',
       'AUV and underwater robotics',
       'Marine robotics',
-      'Navigation',
-      'Control',
-      'Robotics in unstructured environments',
+      'Navigation and control',
+      'Robotics in complex environments',
     ],
     description:
-      'A graduate research direction focused on integrating sensing, control, and intelligence for autonomous systems in complex environments.',
+      'A graduate research interest supported by hands-on ROV operation and maintenance, mobile-robot and robotic-arm prototyping, and technical input on safer AUV operation.',
   },
   {
     id: 'embedded-sensing-control',
-    title: 'Embedded Sensing & Control',
-    statusLabel: 'Project Foundation',
+    title: 'Embedded Sensing & Communication',
+    statusLabel: 'Project & Field Experience',
     kind: 'project',
     topics: [
       'Sensor integration',
       'Embedded systems',
-      'IoT communication',
+      'MQTT and IoT communication',
+      'Radar and radio communication',
       'Real-time monitoring',
-      'Microprocessor applications',
       'Control systems',
     ],
     description:
-      'Project and coursework experience connecting physical sensors, embedded devices, communication, monitoring, and control concepts.',
+      'Project and field experience connecting sensors, embedded devices, communication equipment, monitoring logic, and practical troubleshooting.',
   },
   {
     id: 'thz-semiconductor',
     title: 'THz & Semiconductor Technologies',
-    statusLabel: 'Research Foundation',
+    statusLabel: 'Research & Technical Training',
     kind: 'research',
     topics: [
       'Terahertz spectroscopy',
       'Optoelectronics',
-      'Electromagnetic measurement',
-      'Semiconductor devices',
       'Experimental data acquisition',
+      'Semiconductor devices',
+      'Power semiconductor processes',
     ],
     description:
-      'Completed laboratory research and training that developed a foundation in measurement, devices, and hardware-oriented engineering.',
+      'Laboratory research in THz-TDS and hands-on semiconductor training developed a foundation in measurement, devices, simulation, processing, and packaging.',
   },
 ];
 
 export const featuredResearch: ContentRecord = {
   id: 'terahertz-spectroscopy',
-  title: 'Terahertz Spectroscopy Research',
+  title: 'Terahertz Spectroscopy of Cytidine and 2′-Deoxycytidine Using TPPWGs',
   organization: 'Ultrafast Terahertz Optoelectronics Laboratory · Korea Maritime & Ocean University',
   role: 'Undergraduate Researcher',
   period: 'January 2025 – January 2026',
   location: 'Busan, Republic of Korea',
   problem:
-    'Examine and compare terahertz spectral responses of nucleoside samples under controlled laboratory measurement conditions.',
+    'Characterize and compare the low-frequency spectral signatures of cytidine and 2′-deoxycytidine using THz time-domain spectroscopy and tapered parallel-plate waveguides.',
   shortDescription:
-    'My undergraduate research involved terahertz spectroscopy experiments using cytidine and 2′-deoxycytidine samples applied to tapered parallel-plate waveguides. I participated in THz measurement workflows, examined frequency-domain spectra, and compared measurement conditions and absorption characteristics. This experience strengthened my understanding of electromagnetic measurement, experimental procedures, data acquisition, and the importance of reliable and repeatable research workflows.',
+    'Conducted THz time-domain spectroscopy experiments, including optical alignment, sample preparation, data acquisition, and spectral analysis, to characterize and compare cytidine and 2′-deoxycytidine. Used tapered parallel-plate waveguides to improve THz coupling with small sample quantities and sensitivity to molecular resonance features.',
   detailedDescription:
-    'The work was completed within an established laboratory research workflow under faculty and laboratory guidance. It did not result in a publication claim or an independently owned scientific discovery.',
+    'Conducted undergraduate research under the supervision of Prof. Tae-In Jeon in the Ultrafast Terahertz Optoelectronics Laboratory. The work combined THz-TDS measurement, TPPWG-based sample analysis, LabVIEW-coordinated acquisition, spectral comparison, and an MSE-based review of environmental noise.',
   individualContribution:
-    'Participated in THz measurement sessions, sample and waveguide preparation, LabVIEW-based data acquisition, frequency-domain spectrum examination, comparison of measurement conditions, and review of environmental-noise sources affecting repeatability.',
+    'Performed optical alignment, sample and waveguide preparation, LabVIEW-based instrument control and data acquisition, frequency-domain spectral analysis, and MSE-based noise quantification. Proposed airflow shielding, ferrite-core installation, and cable-management improvements to strengthen measurement stability and reliability.',
   methods: [
     'THz time-domain spectroscopy',
+    'Optical alignment and sample preparation',
     'Tapered parallel-plate waveguides',
-    'Frequency-domain comparison',
-    'MSE-based noise comparison',
-    'Environmental interference review',
-    'Structured experimental data handling',
+    'LabVIEW-based instrument control',
+    'Frequency-domain spectral analysis',
+    'MSE-based environmental-noise analysis',
   ],
   technologies: [
     'THz-TDS',
@@ -240,7 +239,7 @@ export const featuredResearch: ContentRecord = {
     'Experimental Research',
   ],
   outcomes: [
-    'Completed undergraduate research participation in THz spectroscopy measurement and data-examination workflows.',
+    'Completed a one-year undergraduate research experience in THz spectroscopy and proposed practical measures to improve measurement stability.',
   ],
   limitations: [
     'Measurements were sensitive to sample preparation, alignment, and environmental conditions.',
@@ -496,44 +495,41 @@ export const projects: ContentRecord[] = [
     id: 'smart-manhole-monitoring',
     title: 'Smart Manhole Monitoring System for Urban Flood Response',
     originalTitle: '도심 침수 대응을 위한 스마트 맨홀 모니터링 시스템',
-    organization: '2026 ICT Undergraduate Paper Competition · 대한임베디드공학회',
-    role: 'Team Lead',
-    period: 'June 29, 2026',
-    location: 'Pukyong National University',
+    organization: '2026 ICT Undergraduate Paper Competition',
+    role: 'Team Leader & Presenter',
+    period: 'June 2026',
     problem:
-      'Urban flooding can develop quickly, while conventional inspection may not provide timely remote awareness of rising water levels.',
+      'Urban flooding can develop rapidly, while conventional inspection may not provide timely remote awareness of rising water levels.',
     shortDescription:
-      'Led a team project that developed a smart manhole monitoring system for urban flood response. The proposed system combines ultrasonic water-level sensing, temperature-based measurement compensation, embedded edge devices, MQTT communication, Python-based processing, and LED risk alerts to support remote monitoring and earlier situational awareness during heavy rainfall.',
+      'Developed and tested a low-cost urban flood monitoring system using Arduino Uno WiFi, ultrasonic sensors, Raspberry Pi 5, and MQTT communication. Implemented time-of-flight water-level measurement, temperature compensation, and a three-level flood warning system.',
     detailedDescription:
-      'The system connects an A02YYUW ultrasonic sensor and DHT22 temperature sensor to an Arduino Uno WiFi, transmits measurements through MQTT, and uses a Raspberry Pi 5 with Python processing to support monitoring and LED risk alerts.',
+      'The system measures water level with an ultrasonic sensor, compensates for temperature-related changes, transmits readings through MQTT, and uses a Raspberry Pi 5 to process data and support three-level flood warnings.',
     individualContribution:
-      'Led the team project and coordinated development and presentation of the proposed monitoring system.',
+      'Led the team, coordinated system development and testing, and presented the project at the 2026 ICT Undergraduate Paper Competition.',
     methods: [
       'Time-of-flight water-level measurement',
       'Temperature compensation',
       'MQTT communication',
-      'Python-based processing',
-      'Three-level LED warning logic',
+      'Raspberry Pi data processing',
+      'Three-level flood warning logic',
     ],
     technologies: [
       'Arduino Uno WiFi',
-      'A02YYUW Ultrasonic Sensor',
-      'DHT22 Temperature Sensor',
+      'Ultrasonic Sensor',
       'Raspberry Pi 5',
       'MQTT',
       'Python',
       'Embedded Systems',
       'IoT',
-      'LED Risk Alerts',
     ],
     outcomes: [
-      'Prepared and presented the project for the 2026 ICT Undergraduate Paper Competition.',
+      'Developed a working low-cost monitoring prototype and presented it at the 2026 ICT Undergraduate Paper Competition.',
     ],
     limitations: [
       'Field reliability, environmental sealing, long-term calibration, network resilience, and larger-scale validation require further work.',
     ],
     lessonsLearned: [
-      'A monitoring system must coordinate sensing, compensation, communication, processing, and alerts as one dependable pipeline.',
+      'A dependable monitoring system must coordinate sensing, compensation, communication, processing, and warnings as one integrated pipeline.',
     ],
     evidenceStatus: 'pending',
     evidenceItems: [],
@@ -543,22 +539,23 @@ export const projects: ContentRecord[] = [
   },
   {
     id: 'inbody-meal-recommendation',
-    title: 'InBody-Based Personalized Meal Recommendation System',
-    organization: 'Supervised by Prof. Tae-In Jeon',
-    role: 'Team Member',
+    title: 'Rule-Based Personalized Meal Recommendation System Using InBody Data',
+    role: 'Team Leader & Presentation Awardee',
     period: '2025',
     problem:
-      'General meal plans may not reflect a user’s body-composition information, estimated energy needs, or macronutrient requirements.',
+      'General meal plans may not reflect a user’s body composition, nutritional requirements, food preferences, or allergy information.',
     shortDescription:
-      'Participated in the development of a rule-based digital healthcare system that uses body-composition information to estimate energy requirements and macronutrient ratios and generate personalized meal recommendations.',
+      'Developed a personalized meal recommendation system using InBody body-composition data, nutritional requirements, food preferences, and allergy information. Implemented calorie and macronutrient calculations and a rule-based recommendation algorithm for personalized diet planning.',
     detailedDescription:
-      'The project used InBody body-composition data and nutrition calculations to produce a structured seven-day meal plan through rule-based recommendation logic.',
-    individualContributionNeedsConfirmation: true,
+      'The system combines InBody data with nutritional requirements, food preferences, and allergy information, calculates calorie and macronutrient targets, and applies transparent rules to generate personalized meal recommendations.',
+    individualContribution:
+      'Led the team, coordinated the system workflow and presentation, and contributed to the calculation and rule-based recommendation logic.',
     methods: [
-      'Energy-requirement estimation',
-      'Macronutrient-ratio calculation',
+      'Calorie requirement calculation',
+      'Macronutrient calculation',
+      'Preference and allergy filtering',
       'Rule-based recommendation',
-      'Seven-day meal-plan generation',
+      'Personalized diet planning',
     ],
     technologies: [
       'Python',
@@ -569,14 +566,14 @@ export const projects: ContentRecord[] = [
       'Digital Healthcare',
     ],
     outcomes: [
-      'Produced a team-project prototype for rule-based personalized meal planning.',
+      'Completed the team project and received a presentation award.',
     ],
     limitations: [
       'The system used deterministic rules rather than a trained machine-learning model.',
-      'The recommendation quality depends on the completeness of nutrition data and the validity of the calculation rules.',
+      'Recommendation quality depends on the completeness of nutrition data and the validity of the calculation rules.',
     ],
     lessonsLearned: [
-      'Measured data must be translated into transparent, testable rules before it becomes a useful system output.',
+      'Personal data must be translated into transparent, testable rules before it becomes a useful recommendation.',
     ],
     evidenceStatus: 'pending',
     evidenceItems: [],
@@ -586,26 +583,26 @@ export const projects: ContentRecord[] = [
   },
   {
     id: 'machine-learning-textbook-contribution',
-    title: 'Machine Learning Textbook Code Development',
-    originalTitle: '『데이터 분석과 머신러닝 실전』',
-    organization: 'Published Textbook · Parkyoungsa',
+    title: 'R and Python Code Development and Review for a Published Textbook',
+    originalTitle: '『데이터 분석과 머신러닝 실전』 · Data Analysis and Machine Learning in Practice',
+    organization: 'Parkyoungsa Publishing',
     role: 'Technical Contributor',
     period: 'June 2024 – January 2026',
     problem:
       'A textbook that teaches data analysis and machine learning in both R and Python requires runnable examples and careful consistency checks across code, figures, and explanations.',
     shortDescription:
-      'Developed and tested R/Python educational examples for data preprocessing, regression, traditional machine-learning models, ensemble methods, and neural networks for the published textbook 『데이터 분석과 머신러닝 실전』.',
+      'Developed and tested R and Python examples covering neural networks, ensemble models, traditional machine-learning models, and data preprocessing methods, including outlier handling, missing-value treatment, and data scaling.',
     detailedDescription:
-      'Contributed technical support to the published textbook 『데이터 분석과 머신러닝 실전』 by developing and testing R/Python examples across data processing, regression, traditional machine learning, ensemble models, and neural networks. Also supported figure preparation and manuscript proofreading. This work is presented as a technical contribution, not authorship.',
+      'Developed and reviewed instructional R and Python code for the published textbook 『데이터 분석과 머신러닝 실전』. The work covered data preprocessing, regression, traditional machine learning, ensemble models, and neural networks, together with related-method research, figure preparation, and manuscript proofreading.',
     individualContribution:
-      'Developed and tested instructional examples, checked code and outputs for consistency, supported figure preparation, and proofread technical explanations before publication.',
+      'Developed and tested instructional examples, reviewed code and outputs for consistency, researched related methods, supported figure preparation, and proofread technical explanations before publication.',
     methods: [
-      'R/Python example development',
-      'NumPy and Pandas data processing',
-      'Regression implementation',
+      'R and Python example development',
+      'Data preprocessing and scaling',
       'Machine-learning model testing',
+      'Related-method research',
       'Figure preparation',
-      'Technical proofreading',
+      'Manuscript proofreading',
     ],
     technologies: [
       'R',
@@ -613,11 +610,9 @@ export const projects: ContentRecord[] = [
       'NumPy',
       'Pandas',
       'TensorFlow',
-      'Regression',
       'Traditional ML',
       'Ensemble Methods',
       'Neural Networks',
-      'Technical Review',
     ],
     outcomes: [
       'Contributed reviewed instructional code and technical materials to a textbook published by Parkyoungsa on January 5, 2026.',
@@ -627,7 +622,7 @@ export const projects: ContentRecord[] = [
       'OpenCV image-processing and public-data API examples are not included in the contribution scope presented here.',
     ],
     lessonsLearned: [
-      'Educational code must be runnable, reproducible, and aligned with the figures and explanations that learners use to interpret it.',
+      'Educational code must be runnable, reproducible, and aligned with the figures and explanations learners use to interpret it.',
     ],
     evidenceStatus: 'available',
     evidenceItems: [
@@ -649,47 +644,43 @@ export const projects: ContentRecord[] = [
   },
   {
     id: 'deep-learning-code-development',
-    title: 'Deep Learning Textbook Manuscript and Code Development',
-    organization: 'Manuscript in Preparation',
-    role: 'Code Development and Technical Review',
+    title: 'Code Development and Technical Review for a Deep Learning Textbook Manuscript',
+    organization: 'Textbook Manuscript in Preparation',
+    role: 'Technical Contributor',
     period: 'June 2025 – Present',
     problem:
-      'Educational comparisons of neural-network architectures require consistent data, reproducible settings, and technically clear examples.',
+      'Clear educational comparisons of neural-network architectures require common datasets, reproducible settings, and technically consistent code, figures, and explanations.',
     shortDescription:
-      'Developed and tested R and Python/TensorFlow educational examples for DNN, CNN, RNN, and Transformer architectures in support of a deep-learning textbook manuscript.',
+      'Develop and test Python and TensorFlow examples for DNN, CNN, RNN, and Transformer models. Compare model structures and performance using common datasets and review code, figures, and explanatory content.',
     detailedDescription:
-      'The ongoing work develops instructional examples for deep-learning architectures, using R and Python where appropriate and Python/TensorFlow for architecture-focused experiments. Model comparisons use common experimental conditions while retaining architecture-specific examples for educational clarity.',
+      'The ongoing work develops educational examples for DNN, CNN, RNN, and Transformer architectures and compares them under common experimental conditions while preserving the structural characteristics of each model.',
     individualContribution:
-      'Developed and tested DNN, CNN, RNN, and Transformer examples; reviewed model-comparison conditions; and checked code, figures, and explanatory content for technical clarity.',
+      'Develop and test model examples, review architecture-comparison conditions, and check code, figures, and explanatory content for technical clarity and consistency.',
     methods: [
       'Reproducible experiments',
-      'Consistent model comparison',
-      'Code review',
-      'Educational clarity',
-      'Common-data evaluation',
-      'Architecture-specific examples',
+      'Common-dataset comparison',
+      'Architecture-specific model design',
+      'Code and figure review',
+      'Technical content review',
     ],
     technologies: [
       'Python',
-      'R',
       'TensorFlow',
       'Keras',
       'DNN',
       'CNN',
       'RNN',
       'Transformer',
-      'MNIST',
-      'Technical Review',
     ],
     outcomes: [
-      'Developed and reviewed instructional code and technical material for a deep-learning textbook manuscript in preparation.',
+      'Developing and reviewing educational code and technical material for a deep-learning textbook manuscript in preparation.',
     ],
     limitations: [
-      'The manuscript is in preparation and should not be represented as a published book.',
-      'Comparisons are educational experiments and do not establish universal superiority of one architecture.',
+      'The manuscript is in preparation and is not presented as a published book.',
+      'The comparisons are educational experiments and do not establish universal superiority of one architecture.',
     ],
     lessonsLearned: [
-      'Meaningful architecture comparison depends on controlled conditions, reproducibility, and careful interpretation of accuracy, loss, efficiency, convergence, and overfitting.',
+      'Meaningful architecture comparison depends on controlled conditions, reproducibility, and careful interpretation of performance and efficiency.',
     ],
     evidenceStatus: 'pending',
     evidenceItems: [],
@@ -924,49 +915,50 @@ export interface SkillGroupData {
 
 export const skillGroups: SkillGroupData[] = [
   {
-    title: 'Research and Measurement',
+    title: 'Programming & Engineering Software',
     items: [
-      'THz-TDS',
-      'LabVIEW-based measurement systems',
-      'Frequency-domain data examination',
-      'Electromagnetic measurement',
-      'Experimental data handling',
+      'Python, C, and R',
+      'TensorFlow and Keras',
+      'Verilog HDL',
+      'MATLAB and Simulink',
+      'LabVIEW',
+      'Materials Studio',
     ],
   },
   {
-    title: 'Embedded and IoT',
+    title: 'Embedded Systems, Robotics & Digital Design',
     items: [
+      'ATmega128',
       'Arduino Uno WiFi',
       'Raspberry Pi 5',
-      'A02YYUW ultrasonic sensors',
-      'DHT22 sensors',
-      'MQTT',
-      'Microprocessor applications',
-      'Sensor integration',
+      'MQTT and GPIO',
+      'Interrupts and motor control',
+      'Sensor interfacing',
+      'Mobile robot and robotic arm prototyping',
+      'Testbench and ModelSim verification',
     ],
   },
   {
-    title: 'Programming and Data',
+    title: 'Experimental Methods',
     items: [
-      'Python',
-      'C/C++',
-      'R',
-      'TensorFlow/Keras',
-      'Data processing',
-      'Technical code review',
+      'THz-TDS',
+      'Optical alignment',
+      'Sample preparation',
+      'Spectral analysis',
+      'Experimental noise analysis',
+      'Equipment checks and troubleshooting',
     ],
   },
   {
-    title: 'Engineering Foundation',
+    title: 'Power Electronics & Semiconductor Processes',
     items: [
-      'Circuit theory',
-      'Electromagnetics',
-      'Signals and systems',
-      'Digital logic design',
-      'Microprocessor applications',
-      'Automatic control',
-      'Power electronics',
-      'IoT systems',
+      'Diode rectifiers',
+      'Buck, Boost, and Buck–Boost converters',
+      'CCM and DCM analysis',
+      'MD and DFT simulation',
+      'Plasma treatment',
+      'Heavy wire bonding',
+      'Bond testing',
     ],
   },
 ];
@@ -974,19 +966,10 @@ export const skillGroups: SkillGroupData[] = [
 export const education = {
   degree: 'B.S. in Electrical and Electronic Engineering',
   institution: 'Korea Maritime & Ocean University',
-  period: '2021 – Expected February 2027',
+  location: 'Busan, Republic of Korea',
+  period: 'Expected February 2027',
   gpa: '3.97 / 4.50',
-  academicHighlights: [] as string[],
-  coursework: [
-    'Circuit Theory',
-    'Electromagnetics',
-    'Signals and Systems',
-    'Digital Logic Design',
-    'Microprocessor Applications',
-    'Automatic Control',
-    'Power Electronics',
-    'IoT Systems',
-  ],
+  researchInterests: personal.researchInterests,
 };
 
 export const experiences: ContentRecord[] = [
@@ -1000,13 +983,15 @@ export const experiences: ContentRecord[] = [
   {
     id: 'mathematics-instructor',
     title: 'Mathematics Instructor',
-    organization: 'Nambusan Community Child Center',
-    role: 'Instructor',
+    organization: 'Nambusan Children’s Center',
+    role: 'Math Instructor',
     period: 'March 2026 – Present',
     location: 'Busan, Republic of Korea',
     route: '/experience/mathematics-instructor',
     shortDescription:
-      'Teach mathematics to children and provide individualized academic support through structured problem-solving activities. Adapt explanations and learning activities to students’ different learning levels and needs.',
+      'Teach mathematics to 30 elementary and middle school students, provide homework and exam support, and tailor instruction to individual learning levels.',
+    detailedDescription:
+      'Teach mathematics to 30 elementary and middle school students, providing homework support and exam preparation. Provide individualized instruction and monitor academic progress based on each student’s learning level. Over four months, 24 of 30 students (80%) improved their mathematics scores, while the group average increased by 9.7 points.',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1018,10 +1003,12 @@ export const experiences: ContentRecord[] = [
     organization: 'Republic of Korea Army',
     role: 'Squad Leader, January 2023 – July 2023',
     period: 'January 2022 – July 2023',
-    location: 'Pyeongtaek, Gyeonggi-do, Republic of Korea (Pyeongtaek Naval Base)',
+    location: 'Pyeongtaek, Gyeonggi-do, Republic of Korea',
     route: '/experience/army-radar-communications',
     shortDescription:
-      'Operated PRC-999K radios, GPS, radar, harbor communication equipment, and ROVs; conducted communication checks; inspected the vessel’s electrical distribution panel; and performed basic troubleshooting and minor repairs.',
+      'Led patrol-boat personnel while operating radio, GPS, radar, harbor communication, electrical-distribution, and military ROV systems.',
+    detailedDescription:
+      'Led troops during patrol operations by assigning duties, training team members, and reporting personnel and equipment readiness. Operated PRC-999K radios, GPS, radar, and harbor communication equipment; conducted communication checks with coastal units; reported communication quality; inspected and operated the vessel’s electrical distribution panel; and performed basic troubleshooting and minor repairs. Operated and maintained military ROVs, identified tether-related mobility constraints, and provided technical input to military AUV development by recommending fail-safe surfacing and other operational improvements.',
     image: '/experience/patrol-boat-squad-photo.svg',
     imageAlt:
       'Hyeonmin Cho with fellow soldiers aboard a patrol boat at Pyeongtaek Naval Base; the other faces are obscured for privacy.',
@@ -1035,11 +1022,15 @@ export const experiences: ContentRecord[] = [
   {
     id: 'beyond-busan-supporter',
     title: 'Beyond Busan Supporter, SNS Division',
-    organization: 'Bdan',
+    organization: 'Busan Digital Asset Exchange (Bdan)',
+    role: 'Team Member',
     period: 'March 2026 – Present',
     location: 'Busan, Republic of Korea',
     route: '/experience/beyond-busan-supporter',
-    shortDescription: 'Produce and edit social media videos and update website content.',
+    shortDescription:
+      'Create digital content that promotes public understanding of blockchain, artificial intelligence, and digital finance.',
+    detailedDescription:
+      'Collaborate with team members to manage the program’s Instagram account and create posts, thumbnails, and short-form videos on stocks, investments, blockchain, artificial intelligence, and digital finance. The work develops practical experience in visual content design, digital communication, and social media account management.',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1047,21 +1038,21 @@ export const experiences: ContentRecord[] = [
   },
   {
     id: 'busan-un-week-supporter',
-    title: 'UNs Supporter, 2025 Busan UN Week',
+    title: '2025 Busan UN Week – UN Supporter',
     organization: 'Busan Global City Foundation',
     role: 'Supporter',
     period: 'April 2025 – November 2025',
     location: 'Busan, Republic of Korea',
     route: '/experience/busan-un-week-supporter',
     shortDescription:
-      'Collaborated with international participants on festival projects and volunteer activities, produced magazine content, and edited program videos.',
+      'Supported international and UN-related public events, collaborated with international participants, and created magazine content promoting volunteer programs.',
     detailedDescription:
-      'Collaborated with international participants through the 2025 Busan UN Week supporter program. Contributed to public-engagement events, operated promotional booths, supported peace-themed community programs, produced magazine content, and edited program videos.',
+      'Supported major international and UN-related events, including Global Gathering 2025, Walk, Peace in Busan, the 80th UN Day Ceremony, and the UN Peace Festival, by operating promotional booths and assisting participants. Collaborated with international participants and created magazine content to promote volunteer programs and event activities.',
     image: '/experience/busan-un-week-supporter-field-photo.jpg',
     imageAlt:
       'Hyeonmin Cho assisting an international participant at a 2025 Busan UN Week supporter booth.',
     imageCaption:
-      'Public-engagement activity as a UNs Supporter during the 2025 Busan UN Week program.',
+      'Public-engagement activity as a UN Supporter during the 2025 Busan UN Week program.',
     imageWidth: 2048,
     imageHeight: 1150,
     activities: [
@@ -1070,7 +1061,7 @@ export const experiences: ContentRecord[] = [
         date: 'May 24, 2025',
         duration: '4 hours',
         description:
-          'Operated a promotional booth at the 20th Busan Global Gathering (Global Gathering 2025).',
+          'Operated a promotional booth at the 20th Busan Global Gathering.',
       },
       {
         title: 'Walk, Peace in Busan',
@@ -1091,7 +1082,7 @@ export const experiences: ContentRecord[] = [
         date: 'October 25–26, 2025',
         duration: '6.5 hours',
         description:
-          'Operated the UNs Supporters promotional booth across two festival shifts: October 25 from 13:30 to 16:00 and October 26 from 10:00 to 14:00.',
+          'Operated the UN Supporters promotional booth across two festival shifts.',
       },
     ],
     evidenceStatus: 'pending',
@@ -1102,12 +1093,32 @@ export const experiences: ContentRecord[] = [
   {
     id: 'makers-club-officer',
     title: 'Makers Club Officer',
-    organization: 'Korea Maritime & Ocean University',
+    organization: 'Makers Club · Korea Maritime & Ocean University',
+    role: 'Club Officer',
     period: 'March 2024 – December 2024',
     location: 'Busan, Republic of Korea',
     route: '/experience/makers-club-officer',
     shortDescription:
-      'Prepared materials, assisted with hands-on sessions, and worked in teams to build an autonomous mobile robot and a robotic arm.',
+      'Coordinated and supported hands-on projects in embedded systems, digital logic, power electronics, and robotics.',
+    detailedDescription:
+      'Coordinated and supported hands-on projects in ATmega128-based embedded systems, Verilog digital logic design, MATLAB/Simulink power electronics, and robotics. Prepared electronic components, circuit diagrams, sample code, and instructional materials, and mentored new members in circuit assembly, microcontroller programming, simulation, debugging, hardware testing, system integration, and prototyping.',
+    evidenceStatus: 'pending',
+    evidenceItems: [],
+    featured: false,
+    visible: true,
+  },
+  {
+    id: 'esl-program',
+    title: 'ESL Program',
+    organization: 'Cebu International Academy',
+    role: 'Program Participant',
+    period: 'December 2023 – January 2024',
+    location: 'Cebu, Philippines',
+    route: '/experience/esl-program',
+    shortDescription:
+      'Completed an intensive English-language program in an international learning environment.',
+    detailedDescription:
+      'Completed an ESL program at Cebu International Academy, strengthening practical English communication through intensive study and daily interaction in an international environment.',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1124,7 +1135,9 @@ export const training: ContentRecord[] = [
     location: 'Busan, Republic of Korea',
     route: '/experience/power-semiconductor-bootcamp',
     shortDescription:
-      'Lecture-based and hands-on training covering semiconductor devices, Si/SiC/GaN power semiconductors, simulation workflows, wafer processing, characterization, packaging, plasma treatment, heavy wire bonding, and bond testing.',
+      'Lecture-based and hands-on training in semiconductor devices, power semiconductors, simulation, wafer processing, characterization, and packaging.',
+    detailedDescription:
+      'Participate in lecture-based and hands-on training covering semiconductor devices, Si, SiC, and GaN power semiconductors, single-crystal growth, wafer processing, characterization, and semiconductor packaging. Completed Materials Studio exercises in molecular-dynamics and DFT simulation workflows and operated semiconductor back-end equipment, including plasma treatment, heavy wire bonding, and bond testing systems.',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1137,7 +1150,10 @@ export const training: ContentRecord[] = [
     period: 'November 2025',
     location: 'Republic of Korea',
     route: '/experience/rov-training',
-    shortDescription: 'Completed hands-on training in ROV operation and inspection.',
+    shortDescription:
+      'Completed hands-on training in ROV launch and recovery, maneuvering, tether management, underwater inspection, equipment checks, and basic maintenance.',
+    detailedDescription:
+      'Completed hands-on training in ROV launch and recovery, maneuvering, tether management, and camera-based underwater inspection. Practiced pre- and post-operation checks and basic maintenance, including inspection of thrusters, tether cables, watertight seals, power and communication connections, cameras, and control systems, as well as identification of common operational faults.',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1147,48 +1163,8 @@ export const training: ContentRecord[] = [
 
 export const honors: ContentRecord[] = [
   {
-    id: 'industry-analysis-grand-prize',
-    title: 'Grand Prize (대상), Industry Analysis Competition',
-    organization: 'Korea Maritime & Ocean University',
-    period: 'December 1, 2025',
-    evidenceStatus: 'pending',
-    evidenceItems: [],
-    featured: false,
-    visible: true,
-  },
-  {
-    id: 'job-analysis-outstanding-award',
-    title: 'Outstanding Award (최우수상), Job Analysis Competition',
-    organization: 'Korea Maritime & Ocean University',
-    period: 'December 16, 2025',
-    evidenceStatus: 'pending',
-    evidenceItems: [],
-    featured: false,
-    visible: true,
-  },
-  {
-    id: 'capstone-encouragement-award',
-    title: 'Encouragement Award (장려상), 2025 Fall Capstone Design Competition',
-    organization: 'Korea Maritime & Ocean University RISE Program',
-    period: 'December 9, 2025',
-    evidenceStatus: 'pending',
-    evidenceItems: [],
-    featured: false,
-    visible: true,
-  },
-  {
-    id: 'video-excellence-award',
-    title: 'Excellence Award (우수상), 2025 Fall Capstone Design Video Content Competition',
-    organization: 'Korea Maritime & Ocean University RISE Program',
-    period: 'December 9, 2025',
-    evidenceStatus: 'pending',
-    evidenceItems: [],
-    featured: false,
-    visible: true,
-  },
-  {
     id: 'career-roadmap-outstanding-award',
-    title: 'Outstanding Award (최우수상), Career Roadmap Competition',
+    title: 'Outstanding Award, Career Roadmap Competition',
     organization: 'Korea Maritime & Ocean University',
     period: 'January 14, 2026',
     evidenceStatus: 'pending',
@@ -1198,9 +1174,49 @@ export const honors: ContentRecord[] = [
   },
   {
     id: 'capstone-idea-third-place',
-    title: 'Excellence Award – 3rd Place (우수상 3등), 2025 Capstone Design & Idea Presentation Competition',
+    title: 'Excellence Award – 3rd Place, 2025 Capstone Design & Idea Presentation Competition',
     organization: 'Department of Electrical and Electronic Engineering, Korea Maritime & Ocean University',
     period: 'December 22, 2025',
+    evidenceStatus: 'pending',
+    evidenceItems: [],
+    featured: false,
+    visible: true,
+  },
+  {
+    id: 'job-analysis-outstanding-award',
+    title: 'Outstanding Award, Job Analysis Competition',
+    organization: 'Korea Maritime & Ocean University',
+    period: 'December 16, 2025',
+    evidenceStatus: 'pending',
+    evidenceItems: [],
+    featured: false,
+    visible: true,
+  },
+  {
+    id: 'capstone-encouragement-award',
+    title: 'Encouragement Award, 2025 Fall Capstone Design Competition',
+    organization: 'Korea Maritime & Ocean University RISE Program',
+    period: 'December 9, 2025',
+    evidenceStatus: 'pending',
+    evidenceItems: [],
+    featured: false,
+    visible: true,
+  },
+  {
+    id: 'video-excellence-award',
+    title: 'Excellence Award, 2025 Fall Capstone Design Video Content Competition',
+    organization: 'Korea Maritime & Ocean University RISE Program',
+    period: 'December 9, 2025',
+    evidenceStatus: 'pending',
+    evidenceItems: [],
+    featured: false,
+    visible: true,
+  },
+  {
+    id: 'industry-analysis-grand-prize',
+    title: 'Grand Prize, Industry Analysis Competition',
+    organization: 'Korea Maritime & Ocean University',
+    period: 'December 1, 2025',
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
@@ -1251,13 +1267,13 @@ export const navLinks = [
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Education', href: '#education' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Honors', href: '#honors' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export const ownerVerificationItems = [
   'Upload the reviewed Hyeonmin_Cho_CV.pdf before enabling Download CV.',
-  'Confirm the specific individual contribution to the InBody project.',
   'Confirm which sample and condition correspond to THz measurement runs 710 and 707 before adding sample-specific figure labels.',
   'Upload public-safe evidence files for each project before enabling project evidence buttons.',
   'Confirm official English translations for Korean award titles.',

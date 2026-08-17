@@ -8,6 +8,7 @@ import { Projects } from '@/components/projects';
 import { Education } from '@/components/education';
 import { Experience } from '@/components/experience';
 import { Training } from '@/components/training';
+import { Skills } from '@/components/skills';
 import { Honors } from '@/components/honors';
 import { Contact } from '@/components/contact';
 
@@ -85,6 +86,7 @@ export default function Portfolio() {
         <Education />
         <Experience />
         <Training />
+        <Skills />
         <Honors />
         <Contact />
       </main>

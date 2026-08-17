@@ -5,7 +5,7 @@ export function Skills() {
   return (
     <section id="skills" className="py-20 scroll-mt-14">
       <div className="mx-auto max-w-[1180px] px-4 sm:px-6">
-        <SectionHeading title="Technical Foundation" />
+        <SectionHeading title="Technical Skills" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillGroups.map((group) => (

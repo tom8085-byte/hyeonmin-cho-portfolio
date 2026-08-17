@@ -30,15 +30,15 @@ export function Education() {
               <div className="border-t border-border/60 pt-6 mt-6">
                 <div className="flex items-center gap-2 text-foreground font-semibold mb-3">
                   <BookOpen className="w-4 h-4 text-primary" aria-hidden="true" />
-                  <span>Relevant Coursework</span>
+                  <span>Research Interests</span>
                 </div>
                 <ul className="flex flex-wrap gap-2 list-none">
-                  {education.coursework.map((course) => (
+                  {education.researchInterests.map((interest) => (
                     <li
-                      key={course}
+                      key={interest}
                       className="px-3 py-1 text-xs font-mono border bg-secondary text-secondary-foreground border-border"
                     >
-                      {course}
+                      {interest}
                     </li>
                   ))}
                 </ul>
