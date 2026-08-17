@@ -64,6 +64,27 @@ export default function ExperienceDetail({ experienceId }: { experienceId: strin
               )}
             </figure>
           )}
+
+          {experience.galleryImages?.map((image) => (
+            <figure key={image.src} className="experience-record mt-8 ml-4">
+              <div className="experience-record__label">
+                <span>{image.label}</span>
+                <span>{image.period ?? experience.period}</span>
+              </div>
+              <div className="experience-record__image-wrap">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="experience-record__image"
+                />
+              </div>
+              <figcaption className="experience-record__caption">{image.caption}</figcaption>
+            </figure>
+          ))}
         </section>
 
         {experience.activities && experience.activities.length > 0 && (

@@ -43,6 +43,16 @@ export interface ExperienceActivity {
   description: string;
 }
 
+export interface ExperienceGalleryImage {
+  src: string;
+  alt: string;
+  caption: string;
+  label: string;
+  period?: string;
+  width?: number;
+  height?: number;
+}
+
 export interface ContentRecord {
   id: string;
   title: string;
@@ -68,6 +78,7 @@ export interface ContentRecord {
   imageCaption?: string;
   imageWidth?: number;
   imageHeight?: number;
+  galleryImages?: ExperienceGalleryImage[];
   activities?: ExperienceActivity[];
   externalLink?: string;
   route?: string;
@@ -1014,6 +1025,19 @@ export const experiences: ContentRecord[] = [
       'Hyeonmin Cho with fellow soldiers aboard a patrol boat at Pyeongtaek Naval Base; the other faces are obscured for privacy.',
     imageCaption:
       'Service record aboard a patrol boat at Pyeongtaek Naval Base. Other individuals are obscured for privacy.',
+    galleryImages: [
+      {
+        src: '/experience/squad-leader-spring-2023.webp',
+        alt:
+          'Hyeonmin Cho in Republic of Korea Army uniform during his service as a squad leader, standing beneath cherry blossoms in spring 2023.',
+        caption:
+          'Squad leader service record during the January–July 2023 leadership period.',
+        label: 'SQUAD LEADER RECORD',
+        period: 'January 2023 – July 2023',
+        width: 900,
+        height: 1073,
+      },
+    ],
     evidenceStatus: 'pending',
     evidenceItems: [],
     featured: false,
