@@ -553,43 +553,64 @@ export const projects: ContentRecord[] = [
   {
     id: 'inbody-meal-recommendation',
     title: 'Rule-Based Personalized Meal Recommendation System Using InBody Data',
-    role: 'Team Leader & Presentation Awardee',
+    organization:
+      'Division of Electronics and Electrical Information Engineering, Korea Maritime & Ocean University',
+    role: 'First-Listed Author, Team Leader & Presentation Awardee',
     period: '2025',
     problem:
-      'General meal plans may not reflect a user’s body composition, nutritional requirements, food preferences, or allergy information.',
+      'Many digital diet services rely on self-reported data and simple calorie totals, making it difficult to adjust recommendations to body-composition changes and individual constraints.',
     shortDescription:
-      'Developed a personalized meal recommendation system using InBody body-composition data, nutritional requirements, food preferences, and allergy information. Implemented calorie and macronutrient calculations and a rule-based recommendation algorithm for personalized diet planning.',
+      'Proposed a rule-based system that converts InBody measurements or basic physical information into daily energy and macronutrient targets, then recommends three meals while considering goals, activity level, allergies, budget, and ingredient repetition. Evaluated feasibility with an approximately 100-item simulated food database and a 30-day synthetic-user experiment.',
     detailedDescription:
-      'The system combines InBody data with nutritional requirements, food preferences, and allergy information, calculates calorie and macronutrient targets, and applies transparent rules to generate personalized meal recommendations.',
+      'Authored and developed an academic paper proposing a personalized meal-recommendation workflow that links body-composition data to transparent nutrient calculations and meal-matching rules. The system uses InBody measurements when available, applies predictive equations when they are not, normalizes food and nutrient data, and checks recent ingredient use to reduce repetitive meal plans. A 30-day simulation demonstrated varied meal combinations and reduced consecutive ingredient reuse, while also showing that nutrient matching and real-world validation require further improvement.',
     individualContribution:
-      'Led the team, coordinated the system workflow and presentation, and contributed to the calculation and rule-based recommendation logic.',
+      'Served as team leader and first-listed author, coordinated the paper and system workflow, and contributed to nutrient calculation, meal matching, repetition checking, simulation, and result interpretation.',
     methods: [
-      'Calorie requirement calculation',
-      'Macronutrient calculation',
-      'Preference and allergy filtering',
-      'Rule-based recommendation',
-      'Personalized diet planning',
+      'Mifflin-St Jeor BMR estimation',
+      'Activity-factor and goal-based energy adjustment',
+      'Macronutrient calculation using 4-4-9 kcal/g',
+      'Food-data collection and normalization',
+      'Allergy, budget, and meal-timing filtering',
+      'Ingredient repetition checking',
+      '30-day synthetic-user simulation',
     ],
     technologies: [
-      'Python',
-      'Data Processing',
+      'InBody Data',
       'Rule-Based Recommendation',
       'Nutrition Calculation',
-      'InBody Data',
+      'Food Database',
+      'Data Normalization',
       'Digital Healthcare',
+      'Simulation',
     ],
     outcomes: [
-      'Completed the team project and received a presentation award.',
+      'Produced a five-page English academic paper and evaluated the proposed workflow across 30 simulated days using an approximately 100-item food database.',
+      'The simulation generated varied meal combinations and reduced consecutive ingredient reuse, while daily nutrient totals remained below their targets.',
+      'Received a presentation award for the team project.',
     ],
     limitations: [
-      'The system used deterministic rules rather than a trained machine-learning model.',
-      'Recommendation quality depends on the completeness of nutrition data and the validity of the calculation rules.',
+      'The study designed and simulated the system; it did not integrate a live InBody API.',
+      'Evaluation used one synthetic user and an approximately 100-item simulated food database rather than real users and longitudinal body-composition records.',
+      'Daily energy and macronutrient totals remained below their targets, indicating that portion sizing, candidate scoring, and nutrient matching require further calibration.',
     ],
     lessonsLearned: [
-      'Personal data must be translated into transparent, testable rules before it becomes a useful recommendation.',
+      'Transparent recommendation rules are useful only when nutrient targets, food data, filtering constraints, and repetition checks are evaluated together.',
+      'A feasible simulation is an initial validation step, not evidence of clinical effectiveness or real-world deployment.',
     ],
-    evidenceStatus: 'pending',
-    evidenceItems: [],
+    evidenceStatus: 'available',
+    evidenceItems: [
+      {
+        title: 'Rule-Based Personalized Meal Recommendation System Using InBody Data',
+        type: 'English Academic Paper',
+        date: '2025',
+        description:
+          'Five-page English paper covering the research motivation, system architecture, nutrient-calculation method, 30-day simulation, results, limitations, and future work.',
+        href: '/papers/inbody-meal-recommendation-paper.pdf',
+        buttonLabel: 'View Paper (PDF)',
+        altText:
+          'English academic paper on a rule-based personalized meal recommendation system using InBody data.',
+      },
+    ],
     route: '/projects/inbody-meal-recommendation',
     featured: true,
     visible: true,
@@ -780,43 +801,67 @@ export const projectCaseStudies: Record<string, CaseStudy> = {
   'inbody-meal-recommendation': {
     recordId: 'inbody-meal-recommendation',
     sections: [
-      { heading: 'Health-Management Problem', paragraphs: [projects[1].problem ?? ''] },
       {
-        heading: 'Input Data',
+        heading: 'Paper and Authorship',
         paragraphs: [
-          'The workflow uses body-composition information from InBody data together with nutrition-related inputs required by the rule set.',
+          'The English paper lists Hyeon-Min Cho, Sun-Jae Kwon, Min-Jae Choi, Chan-Young Hong, and Tae-In Jeon as authors, with Hyeon-Min Cho appearing first. The project was completed in the Division of Electronics and Electrical Information Engineering at Korea Maritime & Ocean University.',
         ],
       },
       {
-        heading: 'Calculation Process',
+        heading: 'Research Motivation',
         paragraphs: [
-          'Python-based data processing estimates energy requirements and macronutrient ratios before recommendation rules are applied.',
+          'Body weight alone does not capture detailed health status, while many digital diet services depend on self-reported information and provide guidance centered on simple calorie totals. The study therefore examined how body-composition indicators could support more individualized nutritional targets and meal planning.',
         ],
       },
       {
-        heading: 'Recommendation Logic',
+        heading: 'System Inputs and InBody Processing',
         paragraphs: [
-          'The system uses explicit rules rather than a trained model. This makes the recommendation path interpretable but limits adaptation beyond the predefined logic.',
+          'The proposed workflow accepts InBody measurements such as skeletal muscle mass, body-fat mass, body-fat percentage, and basal metabolic rate. When direct measurements are unavailable, it uses sex, age, height, and weight with predictive equations to support a basic recommendation path.',
         ],
       },
       {
-        heading: 'Seven-Day Meal-Plan Structure',
+        heading: 'Energy and Macronutrient Calculation',
         paragraphs: [
-          'Calculated requirements are organized into a seven-day meal-plan structure intended to provide a consistent, personalized output.',
+          'The nutrient module estimates basal metabolic rate with the Mifflin-St Jeor equation, applies an activity factor to estimate total daily energy expenditure, and adjusts the result for weight loss, maintenance, or muscle gain. Carbohydrate, protein, and fat targets are calculated using energy densities of 4, 4, and 9 kcal per gram.',
         ],
       },
       {
-        heading: 'Team Project Workflow',
+        heading: 'Food Database and Filtering',
         paragraphs: [
-          'The team connected data preparation, nutrition calculations, rule design, and output formatting into one digital-healthcare workflow.',
+          'The design organizes foods, nutrients, ingredients, and tags in a normalized database. Candidate meals can be filtered by allergies, budget, meal timing, nutrient composition, preparation method, and recent ingredient use.',
         ],
       },
-      { heading: 'My Contribution', paragraphs: [projects[1].individualContribution ?? ''] },
-      { heading: 'Limitations', paragraphs: projects[1].limitations ?? [] },
       {
-        heading: 'Future Improvements',
+        heading: 'Meal Matching and Repetition Checking',
         paragraphs: [
-          'Future work could validate the calculation rules with domain experts, improve nutrition-data coverage, incorporate user feedback, and test usability with a broader set of profiles.',
+          'Breakfast, lunch, and dinner candidates are evaluated according to their distance from daily nutrient targets, price, and ingredient repetition. The system records when ingredients were recently used so that frequently selected foods do not recur on consecutive days.',
+        ],
+      },
+      {
+        heading: 'Simulation Design',
+        paragraphs: [
+          'Feasibility was examined with an approximately 100-item simulated food database and one synthetic user. The user was assigned daily targets of 375 g of carbohydrates, 80 g of protein, 70 g of fat, and 2,600 kcal, and the system generated three meals per day for 30 days.',
+        ],
+      },
+      {
+        heading: 'Results and Interpretation',
+        paragraphs: [
+          'The generated plans included varied breakfast, lunch, and dinner combinations, and repeated menu items generally reappeared only after an interval of several days. Ingredient reuse on consecutive days decreased when repetition checking was applied.',
+          'The generated energy and macronutrient totals remained below their targets. The simulation therefore supports the feasibility of the workflow and repetition logic, but it also shows that nutrient matching, portion sizing, and candidate scoring need further calibration.',
+        ],
+      },
+      {
+        heading: 'My Contribution',
+        paragraphs: [projects[1].individualContribution ?? ''],
+      },
+      {
+        heading: 'Limitations',
+        paragraphs: projects[1].limitations ?? [],
+      },
+      {
+        heading: 'Future Work',
+        paragraphs: [
+          'Future work includes integrating a live InBody API, expanding the food database to branded products and restaurant menus, and validating the system with real intake records and longitudinal body-composition changes. These data could later support machine-learning-based recommendations and health-status prediction.',
         ],
       },
     ],
