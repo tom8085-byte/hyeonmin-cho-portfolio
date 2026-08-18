@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1180" viewBox="0 0 1900 1180" role="img" aria-labelledby="title desc">
+  <title id="title">Application Architecture for the InBody-Based Meal Recommendation System</title>
+  <desc id="desc">A translated English architecture diagram showing the InBody device, web server, FastAPI data server, Flutter app, user onboarding, InBody API processing, nutrition calculation, food preferences, meal matching, and personalized meal-plan generation.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L18,9 L0,18 Z" fill="#111827"/>
+    </marker>
+    <style>
+      .title { font: 700 54px Arial, Helvetica, sans-serif; fill: #3f4650; letter-spacing: -1px; }
+      .lane { font: 700 28px Arial, Helvetica, sans-serif; fill: #111827; letter-spacing: 1.5px; }
+      .box-title { font: 700 27px Arial, Helvetica, sans-serif; fill: #111827; }
+      .box-title-sm { font: 700 24px Arial, Helvetica, sans-serif; fill: #111827; }
+      .box-text { font: 400 25px Arial, Helvetica, sans-serif; fill: #111827; }
+      .small { font: 400 22px Arial, Helvetica, sans-serif; fill: #111827; }
+      .branch { font: 700 24px Arial, Helvetica, sans-serif; fill: #111827; letter-spacing: 1px; }
+      .box { fill: #ffffff; stroke: #111827; stroke-width: 5; }
+      .key { fill: #ffffff; stroke: #ef2b2d; stroke-width: 6; }
+      .flow { fill: none; stroke: #111827; stroke-width: 5; marker-end: url(#arrow); }
+      .line { fill: none; stroke: #111827; stroke-width: 5; }
+      .divider { stroke: #d7dbe2; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1900" height="1180" fill="#ffffff"/>
+  <text class="title" x="55" y="80">APPLICATION ARCHITECTURE</text>
+
+  <line class="divider" x1="55" y1="115" x2="1845" y2="115"/>
+  <text class="lane" x="55" y="235">PLATFORM</text>
+  <text class="lane" x="55" y="505">INPUT</text>
+  <text class="lane" x="55" y="820">ALGORITHM</text>
+  <text class="lane" x="55" y="1085">OUTPUT</text>
+
+  <!-- Platform layer -->
+  <rect class="box" x="245" y="160" width="275" height="145"/>
+  <text text-anchor="middle" x="382.5" y="202">
+    <tspan class="box-title" x="382.5">InBody</tspan>
+    <tspan class="box-title" x="382.5" dy="38">Measurements</tspan>
+    <tspan class="box-text" x="382.5" dy="42">(Device)</tspan>
+  </text>
+
+  <rect class="box" x="605" y="160" width="265" height="145"/>
+  <text class="box-title" text-anchor="middle" x="737.5" y="242">InBody Web Server</text>
+
+  <rect class="key" x="955" y="160" width="440" height="145"/>
+  <text text-anchor="middle" x="1175" y="210">
+    <tspan class="box-title" x="1175">FastAPI-Based</tspan>
+    <tspan class="box-title" x="1175" dy="38">Data Management Server</tspan>
+    <tspan class="small" x="1175" dy="39">(User InBody Data · Food Database)</tspan>
+  </text>
+
+  <rect class="box" x="1480" y="160" width="300" height="145"/>
+  <text text-anchor="middle" x="1630" y="215">
+    <tspan class="box-title" x="1630">Three-Meal Guide</tspan>
+    <tspan class="box-text" x="1630" dy="48">(Flutter-Based App)</tspan>
+  </text>
+
+  <path class="flow" d="M520 232.5 H605"/>
+  <path class="flow" d="M870 232.5 H955"/>
+  <path class="flow" d="M1395 232.5 H1480"/>
+
+  <!-- User onboarding -->
+  <rect class="box" x="175" y="420" width="335" height="150"/>
+  <text text-anchor="middle" x="342.5" y="475">
+    <tspan class="box-title" x="342.5">User Information Input</tspan>
+    <tspan class="small" x="342.5" dy="47">(Name, Phone Number,</tspan>
+    <tspan class="small" x="342.5" dy="32">Date of Birth, etc.)</tspan>
+  </text>
+
+  <rect class="box" x="595" y="420" width="285" height="150"/>
+  <text text-anchor="middle" x="737.5" y="478">
+    <tspan class="box-title" x="737.5">Check InBody</tspan>
+    <tspan class="box-title" x="737.5" dy="43">Connection</tspan>
+  </text>
+
+  <rect class="key" x="980" y="420" width="430" height="150"/>
+  <text text-anchor="middle" x="1195" y="472">
+    <tspan class="box-title" x="1195">InBody API Algorithm</tspan>
+    <tspan class="small" x="1195" dy="45">(Device-to-Server</tspan>
+    <tspan class="small" x="1195" dy="31">Data Transfer)</tspan>
+  </text>
+
+  <rect class="box" x="1510" y="420" width="300" height="150"/>
+  <text text-anchor="middle" x="1660" y="462">
+    <tspan class="box-title" x="1660">User Body</tspan>
+    <tspan class="box-title" x="1660" dy="38">Information</tspan>
+    <tspan class="small" x="1660" dy="42">(Height, Weight, BMI, etc.)</tspan>
+  </text>
+
+  <rect class="box" x="980" y="635" width="430" height="130"/>
+  <text text-anchor="middle" x="1195" y="687">
+    <tspan class="box-title" x="1195">Additional User</tspan>
+    <tspan class="box-title" x="1195" dy="40">Information</tspan>
+  </text>
+
+  <rect class="box" x="585" y="635" width="295" height="130"/>
+  <text class="box-title" text-anchor="middle" x="732.5" y="712">Main Screen</text>
+
+  <path class="flow" d="M510 495 H595"/>
+  <path class="flow" d="M880 495 H980"/>
+  <text class="branch" x="905" y="470">YES</text>
+  <path class="flow" d="M880 535 L980 678"/>
+  <text class="branch" x="892" y="600">NO</text>
+  <path class="flow" d="M1410 495 H1510"/>
+  <path class="flow" d="M1410 650 L1510 545"/>
+  <path class="flow" d="M1175 305 V420"/>
+
+  <!-- Planning data -->
+  <rect class="box" x="1430" y="650" width="350" height="140"/>
+  <text text-anchor="middle" x="1605" y="703">
+    <tspan class="box-title" x="1605">Food Database</tspan>
+    <tspan class="small" x="1605" dy="45">(Ingredients, Recipes,</tspan>
+    <tspan class="small" x="1605" dy="31">Nutrients, etc.)</tspan>
+  </text>
+
+  <rect class="box" x="1540" y="860" width="285" height="145"/>
+  <text text-anchor="middle" x="1682.5" y="913">
+    <tspan class="box-title" x="1682.5">User Goal Input</tspan>
+    <tspan class="small" x="1682.5" dy="45">(e.g., Duration,</tspan>
+    <tspan class="small" x="1682.5" dy="31">Target Weight)</tspan>
+  </text>
+
+  <rect class="key" x="1190" y="860" width="295" height="145"/>
+  <text text-anchor="middle" x="1337.5" y="910">
+    <tspan class="box-title-sm" x="1337.5">Personalized Daily</tspan>
+    <tspan class="box-title-sm" x="1337.5" dy="36">Nutrient Calculation</tspan>
+    <tspan class="small" x="1337.5" dy="34">Algorithm</tspan>
+  </text>
+
+  <rect class="key" x="805" y="860" width="320" height="145"/>
+  <text text-anchor="middle" x="965" y="882">
+    <tspan class="box-title" x="965">Food Preference</tspan>
+    <tspan class="box-title" x="965" dy="36">Survey</tspan>
+    <tspan class="small" x="965" dy="36">(Preferences, Allergies,</tspan>
+    <tspan class="small" x="965" dy="28">Frequency, etc.)</tspan>
+  </text>
+
+  <rect class="key" x="455" y="860" width="285" height="145"/>
+  <text text-anchor="middle" x="597.5" y="902">
+    <tspan class="box-title" x="597.5">Meal Plan</tspan>
+    <tspan class="box-title" x="597.5" dy="39">Matching</tspan>
+    <tspan class="small" x="597.5" dy="35">Algorithm</tspan>
+  </text>
+
+  <rect class="box" x="120" y="860" width="280" height="145"/>
+  <text text-anchor="middle" x="260" y="891">
+    <tspan class="box-title" x="260">Generate</tspan>
+    <tspan class="box-title" x="260" dy="38">Personalized</tspan>
+    <tspan class="box-title" x="260" dy="38">Meal Plan</tspan>
+  </text>
+
+  <path class="flow" d="M1810 495 H1845 V825 H1682.5 V860"/>
+  <path class="flow" d="M1540 932.5 H1485"/>
+  <path class="flow" d="M1190 932.5 H1125"/>
+  <path class="flow" d="M805 932.5 H740"/>
+  <path class="flow" d="M455 932.5 H400"/>
+  <path class="flow" d="M1605 790 V820 H965 V860"/>
+
+  <!-- Feedback loop for repetition checking -->
+  <path class="line" d="M260 1005 V1095 H965 V1015"/>
+  <path class="flow" d="M965 1095 V1005"/>
+</svg>

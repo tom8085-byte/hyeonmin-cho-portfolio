@@ -49,14 +49,14 @@ function ProjectDiagram({ projectId }: { projectId: string }) {
         <h2 className="text-xl font-bold text-foreground mb-4 border-l-2 border-primary pl-4">
           Paper Figures
         </h2>
-        <div className="space-y-6 pl-4">
-          <figure className="border border-border bg-card/30 p-4 sm:p-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 pl-4">
+          <figure className="border border-border bg-card/30 p-4 sm:p-6 flex flex-col">
             <a
               href="/projects/inbody-meal-recommendation-system-flow.webp"
               target="_blank"
               rel="noreferrer"
               aria-label="Open the meal recommendation system flowchart in full resolution"
-              className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+              className="flex aspect-[16/11] items-center justify-center bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
             >
               <img
                 src="/projects/inbody-meal-recommendation-system-flow.webp"
@@ -65,7 +65,7 @@ function ProjectDiagram({ projectId }: { projectId: string }) {
                 height={1039}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-auto object-contain bg-white"
+                className="w-full h-full object-contain"
               />
             </a>
             <figcaption className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -74,7 +74,31 @@ function ProjectDiagram({ projectId }: { projectId: string }) {
             </figcaption>
           </figure>
 
-          <figure className="border border-border bg-card/30 p-4 sm:p-6">
+          <figure className="border border-border bg-card/30 p-4 sm:p-6 flex flex-col">
+            <a
+              href="/projects/inbody-application-architecture-en.svg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the English InBody application architecture diagram in full resolution"
+              className="flex aspect-[16/11] items-center justify-center bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+            >
+              <img
+                src="/projects/inbody-application-architecture-en.svg"
+                alt="English application architecture diagram connecting the InBody device, web server, FastAPI data server, Flutter app, user inputs, nutrient calculation, food preferences, meal matching, and personalized meal-plan generation."
+                width={1900}
+                height={1180}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-contain"
+              />
+            </a>
+            <figcaption className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              Figure 2. Application architecture connecting the InBody device, FastAPI server,
+              Flutter app, user inputs, nutrient calculation, and meal-plan generation.
+            </figcaption>
+          </figure>
+
+          <figure className="xl:col-span-2 border border-border bg-card/30 p-4 sm:p-6">
             <a
               href="/projects/inbody-meal-recommendation-10-day-results.webp"
               target="_blank"
@@ -93,7 +117,7 @@ function ProjectDiagram({ projectId }: { projectId: string }) {
               />
             </a>
             <figcaption className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Figure 2. Ten-day sample from the 30-day synthetic-user simulation. Open the
+              Figure 3. Ten-day sample from the 30-day synthetic-user simulation. Open the
               figure to inspect the full-resolution table.
             </figcaption>
           </figure>
