@@ -268,7 +268,7 @@ function ApplicationWalkthrough({ projectId }: { projectId: string }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 pl-4 md:grid-cols-2">
+      <div className="mx-auto grid max-w-[740px] grid-cols-1 gap-6 pl-4 md:grid-cols-2">
         {inbodyWalkthrough.map((step, index) => {
           const isOpeningScreen = index === 0;
           const isFinalScreen = index === inbodyWalkthrough.length - 1;
