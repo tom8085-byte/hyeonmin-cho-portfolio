@@ -601,12 +601,12 @@ export const projects: ContentRecord[] = [
     evidenceItems: [
       {
         title: 'Rule-Based Personalized Meal Recommendation System Using InBody Data',
-        type: 'English Academic Paper',
+        type: 'Original Apple Pages Paper',
         date: '2025',
         description:
-          'Five-page English paper covering the research motivation, system architecture, nutrient-calculation method, 30-day simulation, results, limitations, and future work.',
-        href: '/papers/inbody-meal-recommendation-paper.pdf',
-        buttonLabel: 'View Paper (PDF)',
+          'Original five-page Apple Pages paper covering the research motivation, system architecture, nutrient-calculation method, 30-day simulation, results, limitations, and future work.',
+        href: '/papers/personalized-meal-recommendation-system-inbody.pages',
+        buttonLabel: 'View Original Paper (.pages)',
         altText:
           'English academic paper on a rule-based personalized meal recommendation system using InBody data.',
       },
